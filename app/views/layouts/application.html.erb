@@ -4,10 +4,7 @@
   <title>Thales</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  
-  <%#= javascript_include_tag "ckeditor/init" 
-  %>
-  
+    
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -35,51 +32,25 @@
 </div>	
 	
 	<div class="container" id="container">
+		
 		<h1><%= yield(:title) %></h1>
+		
 		<div class="row">
 			<div class="span8">
 			  <%= yield %>
 			</div>
 				
-			<!--
-		  	<div class="span8">
-		  		<h2>Introdução</h2>
-		  		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		  		incididunt ut labore et dolore magna aliqua. <br />
-		  		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		  		incididunt ut labore et dolore magna aliqua. <br />
-		  		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		  		incididunt ut labore et dolore magna aliqua. <br />
-		  		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		  		incididunt ut labore et dolore magna aliqua. <br />
-		  		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		  		incididunt ut labore et dolore magna aliqua. 	<br />
-		  		
-		  		
-		  	</div>-->	
+				
 		  	<div class="span4" id="user_nav">
 				<% if user_signed_in? %>
 					Logado como <%= current_user.email %>. <br />Não é você?
 					<%= link_to "Sair", destroy_user_session_path, :method => :delete %>
 				<% else %>
 			 		<%= link_to "Registrar", new_user_registration_path  %> ou <%= link_to "Entrar", new_user_session_path%>
-				<% end %>
-				
-				<% flash.each do |name, msg| %>
-					<% content_tag :div, msg, :id => "flash_#{name}"%>	
-				<% end%>
-				
-				
+				<% end %>				
 			</div>
 			
-		
-			
 		</div>
-		
-		
-	
-		
-
 	</div>
 </body>
 </html>
