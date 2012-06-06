@@ -3,7 +3,7 @@ window.Thales =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  #init: -> alert 'Hello from Backbone!'
 
-$(document).ready ->
-  Thales.init()
+#$(document).ready ->
+  #Thales.init()

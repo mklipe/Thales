@@ -1,6 +1,15 @@
 Thales::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :answers
+
+  resources :questions
+
+  resources :exercises
+
+  match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users
-  
+  resources :authentications
   resources :introductions
   root :to => "introductions#index"
   

@@ -10,6 +10,13 @@ gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
 gem 'backbone-on-rails'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "ckeditor", "3.7.1"
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +25,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'backbone-on-rails'
   gem 'underscore'
+  gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
@@ -26,7 +34,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'formtastic'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
