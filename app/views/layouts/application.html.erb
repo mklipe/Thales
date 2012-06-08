@@ -19,12 +19,21 @@
       </a>	
       	<a class="brand" href="#">Thales</a>
       	<div class="nav-collapse">
-      		<ul class="nav">
+      		<ul class='nav pull-right'>
       			<li><%= link_to "Introdução" %></li>
       			<li><%= link_to "Exercícios" %></li>
       			<li><%= link_to "Feedback" %></li>
       			<li><%= link_to "Ajuda"%></li>
-      		</ul>
+      			<% if user_signed_in? %>
+					<li><%= link_to current_user.email %></li>
+					<li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+				<% else %>
+			 		<li><%= link_to "Registrar", new_user_registration_path  %> </li> 
+			 		<li><%= link_to "Entrar", new_user_session_path%></li>
+				<% end %>
+							
+				
+			</ul>
       	</div>
       
     </div>
@@ -41,14 +50,7 @@
 			</div>
 				
 				
-		  	<div class="span4" id="user_nav">
-				<% if user_signed_in? %>
-					Logado como <%= current_user.email %>. <br />Não é você?
-					<%= link_to "Sair", destroy_user_session_path, :method => :delete %>
-				<% else %>
-			 		<%= link_to "Registrar", new_user_registration_path  %> ou <%= link_to "Entrar", new_user_session_path%>
-				<% end %>				
-			</div>
+		  	
 			
 		</div>
 	</div>
