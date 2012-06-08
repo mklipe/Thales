@@ -189,6 +189,7 @@ RailsAdmin.config do |config|
         ckeditor true
       end
     end
+    end
     
   
   #   # Found associations:

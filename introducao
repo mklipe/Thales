@@ -1,0 +1,118 @@
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<h1 style="text-align: justify; ">
+	Introdu&ccedil;&atilde;o</h1>
+<h2 class="western" style="text-align: justify; ">
+	Segmentos Proporcionais</h2>
+<p style="text-align: justify; ">
+	&nbsp;</p>
+<p style="text-align: justify; ">
+	<span style="text-align: justify; ">Chamamos de </span><b style="text-align: justify; ">raz&atilde;o entre dois segmentos de reta</b><span style="text-align: justify; "> a raz&atilde;o entre as medidas desses segmentos, sempre tomados na mesma unidade de medida.</span></p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	Lembre-se: Dados dois n&uacute;meros reais a e b, sendo b diferente de zero, a raz&atilde;o do primeiro para o segundo &eacute; o quociente (resultado da divis&atilde;o) de a por b, ou seja <script type="math/tex; mode=display">
+  {a\over b} 
+</script>.</p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	Tendo ent&atilde;o, quatro segmentos de reta, com as medidas AB, CD, EF e GH. Os segmentos AB e CD ser&atilde;o proporcionais a EF e GH se: <script type="math/tex; mode=display">
+  {AB\over CD} = {EF\over GH}
+</script>.</p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	<strong>Exemplo:</strong> Os segmentos AB = 4cm, CD = 6cm, EF = 8cm e GH = 12cm, formam nessa ordem uma propor&ccedil;&atilde;o?</p>
+<p style="margin-bottom: 0cm; margin-left: 40px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {AB\over CD} = {4\over 6} </script>e <script type="math/tex; mode=display">
+  {EF\over GH} = {8\over 12}
+</script></p>
+<p style="margin-bottom: 0cm; margin-left: 40px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {4\over 6} = {8\over 12} = 0.6666...
+</script></p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	Ou seja as raz&otilde;es s&atilde;o iguais, portanto os segmentos AB, CD, EF, e GH formam, nessa ordem, uma propor&ccedil;&atilde;o.</p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	&nbsp;</p>
+<h2 class="western" style="text-align: justify; ">
+	Feixe de Retas Paralelas</h2>
+<p style="text-align: justify; ">
+	Uma reta que corta o feixe de paralelas &eacute; denominada de reta transversal.</p>
+<p style="text-align: justify; margin-left: 120px; ">
+	<img alt="" src="/ckeditor_assets/pictures/4fd260c31d41c84871000005/content_4a11fbd5.png?1339187395" style="width: 449px; height: 305px; " /></p>
+<p style="text-align: justify; ">
+	Na figura acima as retas r e s s&atilde;o transversais em rela&ccedil;&atilde;o ao feixe de paralelas.</p>
+<p style="text-align: justify; ">
+	&nbsp;</p>
+<h2 class="western" style="page-break-before: always; text-align: justify; ">
+	Teorema de Thales</h2>
+<p style="text-align: justify; ">
+	Sejam as retas a, b e c paralelas, que determinam sobre a transversal t os segmentos AB e BC e sobre a transversal m os segmentos MN e NP.</p>
+<p style="text-align: justify; ">
+	Vamos tomar uma unidade <i>u</i> tal que AB = 2<i>u</i> e BC = 3<i>u.</i></p>
+<p style="text-align: justify; ">
+	Dividimos assim, o segmento AB em duas partes e o segmento BC em tr&ecirc;s partes. De modo que os 5 segmentos obtidos sejam congruentes.</p>
+<p style="text-align: justify; ">
+	Pelos pontos da divis&atilde;o tra&ccedil;amos retas paralelas &agrave;s retas <i>a</i>, <i>b</i> e <i>c</i>. Se os segmentos determinados pelas paralelas em <i>t</i> s&atilde;o congruentes ent&atilde;o os segmentos determinados em <i>m</i> tamb&eacute;m ser&atilde;o conguentes. Chamamos essas medidas de v.</p>
+<p style="text-align: justify; ">
+	Tendo as medidas como na figura acima, podemos descrever a rela&ccedil;&atilde;o entre os segmentos formados nas retas <i>t</i> e<i> m</i>.</p>
+<p style="margin-left: 40px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {AB\over BC} = {2u\over 3u} = {2\over 3}
+</script></p>
+<p style="margin-left: 40px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {MN\over NP} = {2v\over 3v} = {2\over 3}
+</script></p>
+<p style="text-align: justify; ">
+	Sendo iguais as raz&otilde;es entre os segmentos, temos que os segmentos AB, BC, MN e NP s&atilde;o proporcionais.</p>
+<p style="text-align: justify; ">
+	Essa rela&ccedil;&atilde;o &eacute; conhecida como Teorema de Thales, em homenagem ao matem&aacute;tico Thales de Miletto, que a desenvolveu.</p>
+<p style="text-align: justify; ">
+	Podemos considerar ainda outras propor&ccedil;&otilde;es a partir do Teorema de Thales: <script type="math/tex; mode=display">
+  {AB\over AC} = {MN\over MP}
+</script><script type="math/tex; mode=display">
+  {BC\over AC} = {NP\over MP}
+</script><script type="math/tex; mode=display">
+  {AB\over MN} = {BC\over NP}
+</script></p>
+<p style="text-align: justify; ">
+	<strong>Exemplo 1:</strong></p>
+<p style="text-align: justify; ">
+	Na figura a seguir temos que <i>r</i>, <i>s </i>e <i>t </i>s&atilde;o paralelas. Vamos determinar a medida x indicada.</p>
+<p style="margin-left: 40px; text-align: justify; ">
+	Pelo Teorema de Thales temos:</p>
+<p style="margin-left: 80px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {10\over 2} = {8\over x}
+</script></p>
+<p style="margin-left: 40px; text-align: justify; ">
+	Utilizando a regra de tr&ecirc;s temos:</p>
+<p style="margin-left: 80px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {10x} = {16}
+</script></p>
+<p style="margin-left: 40px; text-align: justify; ">
+	Isolando o x:</p>
+<p style="margin-left: 80px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {x} = {16\over 10} = {1,6}
+</script></p>
+<p style="margin-bottom: 0cm; text-align: justify; ">
+	&nbsp;</p>
+<h2 class="western" style="text-align: justify; ">
+	Um pouco mais de hist&oacute;ria</h2>
+<p style="text-align: justify; ">
+	Thales de Mileto foi um importante fil&oacute;sofo, astr&ocirc;nomo e matem&aacute;tico grego, que viveu antes de Cristo. Ele usou seus conhecimentos sobre Geometria e proporcionalidade para determinar a altura de uma pir&acirc;mide. Em seus estudos, Thales observou que os raios solares que chegavam &agrave; Terra estavam na posi&ccedil;&atilde;o inclinada e eram paralelos, dessa forma, ele concluiu que havia proporcionalidade entre as medidas da sombra e da altura dos objetos.</p>
+<p style="text-align: justify; ">
+	<img alt="" src="/ckeditor_assets/pictures/4fd260d81d41c84871000008/content_piramide.gif?1339187416" style="width: 800px; height: 357px; " /></p>
+<p style="text-align: justify; ">
+	Com base nessa descoberta, Thales conseguiu medir a altura de uma pir&acirc;mide com base no tamanho de sua sombra. Para tal, ele fincou uma estaca na areia e mediu as sombras da estaca e da pir&acirc;mide em uma determinada hora do dia e estabeleceu a seguinte rela&ccedil;&atilde;o:</p>
+<p style="margin-left: 40px; text-align: justify; ">
+	<script type="math/tex; mode=display">
+  {altura da pirâmide\over sombra da pirâmide} = {altura da estaca\over sombra da estaca} </script></p>
+<p style="text-align: justify; ">
+	Com isso, podemos enunciar o teorema da seguinte maneira: <b>Feixes de retas paralelas cortadas ou intersectadas por segmentos transversais formam segmentos de retas proporcionais.</b></p>
+<p style="text-align: justify; ">
+	&nbsp;</p>
+<h2 class="western" style="text-align: justify; ">
+	Aplica&ccedil;&atilde;o</h2>
+<p style="text-align: justify; ">
+	O teorema de Thales, &eacute; bastante utilizado para o c&aacute;lculo de dist&acirc;ncias e alturas inacess&iacute;veis, convers&atilde;o de temperaturas.</p>

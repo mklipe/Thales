@@ -1,3 +1,5 @@
 This project is based in Rails, Backbone and Mongodb.
 It'll be a Learning Object about Thales Theorem and its problems/applications in real life. 
 The learner will do exercises to practice that. 
+
+The file "introducao" has a html text to introduce on ckeditor in admin/introduction/new
