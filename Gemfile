@@ -16,7 +16,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "ckeditor", "3.7.1"
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
-
+gem 'rails_admin'
 
 # Gems used only for assets and not required
 # in production environments by default.
