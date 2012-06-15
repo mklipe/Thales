@@ -1,17 +1,17 @@
 <h2>Registrar</h2>
-
+<br />
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label "E-mail"%><br />
+  <div><%= f.label "E-mail"%>
   <%= f.email_field :email %></div>
 
-  <div><%= f.label "Senha" %><br />
+  <div><%= f.label "Senha" %>
   <%= f.password_field :password %></div>
 
-  <div><%= f.label "Confirmação da senha" %><br />
+  <div><%= f.label "Confirmação da senha" %>
   <%= f.password_field :password_confirmation %></div>
-
+<br />
   <div><%= f.submit "Registrar" %></div>
 <% end %>
 
