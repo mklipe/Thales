@@ -3,4 +3,5 @@ class Introduction
   field :title, :type => String
   field :content, :type => String
   #key :title
+  
 end

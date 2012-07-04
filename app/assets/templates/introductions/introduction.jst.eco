@@ -1,0 +1,8 @@
+<article class="introduction" align="center">
+    <header>
+    	<h2><%= @introduction.get('title') %></h2>
+    </header>
+    
+    <%- (@introduction.get('content'))%> 	  
+ </article>
+ 

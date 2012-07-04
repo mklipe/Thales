@@ -3,7 +3,14 @@ window.Thales =
   Collections: {}
   Views: {}
   Routers: {}
-  #init: -> alert 'Hello from Backbone!'
+  
+  init: ->
+    new Thales.Routers.IntroductionsRouter()
+    Backbone.history.start({pushState : true})
 
-#$(document).ready ->
-  #Thales.init()
+$(document).ready ->
+  Thales.init()
+
+
+  
+

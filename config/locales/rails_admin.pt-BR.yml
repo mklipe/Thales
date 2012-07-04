@@ -1,9 +1,8 @@
 pt-BR:
   views:
+  home:
+      name: "Home"
   admin:
-    home:
-      name:
-         name: "Home"
     pagination:
       previous: "&laquo; Anterior"
       next: "Próximo &raquo;"

@@ -203,5 +203,12 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
+    models:
+      introduction:
+        one: 'Introdução'
+        other: 'Introduções'
+    attributes:
+      introduction:
+        content: Conteúdo
     errors:
       <<: *errors

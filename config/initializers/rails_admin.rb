@@ -183,8 +183,12 @@ RailsAdmin.config do |config|
   #   update do; end
   # end
    config.model Introduction do
+    list do
+      field :title
+    end
      
     edit do
+      field :title, :text
       field :content, :text do
         ckeditor true
       end

@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -22,9 +21,7 @@
       		<ul class='nav pull-right'>
       			      			
       			<li class="dropdown">
-    				<a class="dropdown-toggle"
-       					data-toggle="dropdown"
-       					href="#">
+    				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
         				Introdução
         				<b class="caret"></b>
       				</a>
@@ -70,24 +67,19 @@
 				<% end %>
 							
 				
-			</ul>
-      	</div>
-      
+		  </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>	
+  </div>	
 	
 	<div class="container" id="container">
-		
-		<h1><%= yield(:title) %></h1>
-		
 		<div class="row">
-			<div class="span8">
+			
+			<div class="span12">
 			  <%= yield %>
 			</div>
-			
-				
-</div>
+		</div>
 	</div>
 </body>
 </html>
