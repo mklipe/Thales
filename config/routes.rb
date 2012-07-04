@@ -9,7 +9,7 @@ Thales::Application.routes.draw do
   resources :authentications
   
   #match ':scope(*path)', to: 'home#index', :constraints => {scope: 'api'}
-  
+  match 'introductions/page/:page' => 'home#index'
   root to: "home#index"
  
   scope "api" do
