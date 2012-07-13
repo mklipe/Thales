@@ -1,0 +1,9 @@
+.bundle
+log/*.log
+db/*.sqlite3
+tmp/
+.sass-cache/
+.DS_Store
+*.sw[onp]
+*.tmproj
+.rvmrc

@@ -3,7 +3,7 @@ window.Thales =
   Collections: {}
   Views: {}
   Routers: {}
-  
+
   init: ->
     new Thales.Routers.ExercisesRouter()
     new Thales.Routers.IntroductionsRouter()
@@ -13,5 +13,5 @@ $(document).ready ->
   Thales.init()
 
 
-  
+
 

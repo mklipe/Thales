@@ -5,23 +5,24 @@ Thales::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   match '/auth/:provider/callback' => 'authentications#create'
-  
+
   devise_for :users
   resources :authentications
-  
+
   #match ':scope(*path)', to: 'home#index', :constraints => {scope: 'api'}
   match 'introductions/page/:page' => 'home#index'
   match 'exercises/page/:page' => 'home#index'
   root to: "home#index"
-  
+
   scope "api" do
     resources :answers
-    resources :questions
-    resources :exercises
+    resources :exercises do
+      resources :questions
+    end
     resources :introductions
   end
   #root :to => "introductions#index"
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
