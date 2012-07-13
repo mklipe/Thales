@@ -1,0 +1,7 @@
+<div class="question">
+    <h2><%= @question.get('title') %></h2>
+    <p><%= @question.get('content') %></p>
+    <form>
+    	<input type="text"></input>
+    </form>
+</div>

@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyString
+  title: MyString
+  content: MyText
+  correct_answer: MyString
 
 two:
-  content: MyString
+  title: MyString
+  content: MyText
+  correct_answer: MyString

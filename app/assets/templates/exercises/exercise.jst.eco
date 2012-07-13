@@ -1,0 +1,8 @@
+<article class="exercise">
+    <header>
+    	<h2><%= @exercise.get('title') %></h2>
+    </header>
+    
+    <%- (@exercise.get('content'))%> 	  
+</article>
+ 

@@ -6,6 +6,18 @@
   <%= javascript_include_tag "application" %>
     
   <%= csrf_meta_tags %>
+  <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full">
+  </script>
+  <script type="text/x-mathjax-config">
+	//<![CDATA[
+	    MathJax.Hub.Config({
+	      asciimath2jax: {
+		delimiters: [['`','`'], ['$','$']]
+	      }
+	    });
+	 //]]>
+  </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -25,13 +37,7 @@
         				Introdução
         				<b class="caret"></b>
       				</a>
-    					<ul class="dropdown-menu">
-      						<li><%= link_to "Segmentos Proporcionais" %></li>
-      						<li><%= link_to "Feixes de Retas Paralelas" %></li>
-      						<li><%= link_to "Teorema de Thales" %></li>
-      						<li><%= link_to "Um Pouco Mais de História" %></li>
-      						<li><%= link_to "Exemplo 1" %></li>
-      						<li><%= link_to "Exemplo 2" %></li>
+    					<ul id='nav_introductions' class="dropdown-menu">
 						</ul>
   					</li>
       			

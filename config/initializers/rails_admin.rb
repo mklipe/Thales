@@ -170,19 +170,7 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model Exercise do
-  #   # Found associations:
-  #   # Found columns:
-  #     configure :_type, :text         # Hidden 
-  #     configure :_id, :bson_object_id   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
-   config.model Introduction do
+   config.model Exercise do
     list do
       field :title
     end
@@ -193,6 +181,19 @@ RailsAdmin.config do |config|
         ckeditor true
       end
     end
+   end 
+    
+   config.model Introduction do
+    list do
+      field :title
+    end
+     
+     edit do
+      field :title, :text
+      field :content, :text do
+        ckeditor true
+      end
+     end
     end
     
   

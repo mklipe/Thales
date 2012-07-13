@@ -1,0 +1,32 @@
+<%= form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label "Título", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Enunciado", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Resposta correta", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :correct_answer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <% f.label :exercise_id, :class => 'control-label' %>
+    <div class="controls">
+      <% f.text_field :exercise_id, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Enviar", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                questions_path, :class => 'btn' %>
+  </div>
+<% end %>

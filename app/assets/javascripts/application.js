@@ -16,6 +16,7 @@
 //= require ckeditor/init
 //= require underscore
 //= require backbone
+//= require backbone-relational
 //= require thales
 //= require_tree ../templates
 //= require_tree ./models

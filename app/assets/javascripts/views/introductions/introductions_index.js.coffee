@@ -15,7 +15,6 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     
     Backbone.history.navigate(href, true)
     
- 
   render: ->
     introductions = @model.models
     len = introductions.length
@@ -26,5 +25,4 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
       model: @model
       page: @options.page
     ).render().el
-    
     this

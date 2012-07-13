@@ -9,6 +9,7 @@ class Thales.Routers.IntroductionsRouter extends Backbone.Router
     page = (if page then parseInt(page, 10) else 1)
     console.log(page)   
     introductions = new Thales.Collections.Introductions()
+    console.log(introductions)
     introductions.fetch 
       success: ->
         $("#content").html new Thales.Views.IntroductionsIndex(

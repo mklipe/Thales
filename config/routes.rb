@@ -1,4 +1,5 @@
 Thales::Application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -10,8 +11,9 @@ Thales::Application.routes.draw do
   
   #match ':scope(*path)', to: 'home#index', :constraints => {scope: 'api'}
   match 'introductions/page/:page' => 'home#index'
+  match 'exercises/page/:page' => 'home#index'
   root to: "home#index"
- 
+  
   scope "api" do
     resources :answers
     resources :questions
