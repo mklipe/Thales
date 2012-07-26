@@ -16,19 +16,12 @@ class Thales.Views.QuestionsShow extends Backbone.View
     
     answer = new Thales.Models.Answer()
     
-    attributes =
-      user_id : '5008c0ff1d41c80995000003'
-      response: e.srcElement.form.answer.value
-      question: @model
-    
-    
-    answer.save attributes,
+    currentUser.fetch success: () =>
+      answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: currentuser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
           console.log('acertou')
         else
-          console.log('errou')
-          
-        console.log(model, ' Success')     
+          console.log('errou')   
       error: ->
         console.log(answer, ' Error ')

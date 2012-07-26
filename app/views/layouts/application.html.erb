@@ -31,23 +31,8 @@
       	<a class="brand" href="#">Thales</a>
       	<div class="nav-collapse">
       		<ul class='nav pull-right'>
-      			      			
-      			<li class="dropdown">
-    				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        				Introdução
-        				<b class="caret"></b>
-      				</a>
-    			</li>
-      			
-      			<li class="dropdown">
-    				<a class="dropdown-toggle"
-       					data-toggle="dropdown"
-       					href="#">
-        				Exercícios
-        				<b class="caret"></b>
-      				</a>
-  				</li>
-      			
+      			<li><%= link_to "Introdução" %></li>
+      			<li><%= link_to "Exercícios"%></li>      			
       			<li><%= link_to "Feedback" %></li>
       			<li><%= link_to "Ajuda"%></li>
       			
@@ -58,9 +43,7 @@
 			 		<li><%= link_to "Registrar", new_user_registration_path  %> </li> 
 			 		<li><%= link_to "Entrar", new_user_session_path%></li>
 				<% end %>
-							
-				
-		  </ul>
+			</ul>
         </div>
       </div>
     </div>

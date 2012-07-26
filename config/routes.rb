@@ -15,6 +15,8 @@ Thales::Application.routes.draw do
   root to: "home#index"
 
   scope "api" do
+    resources :users
+    resources :user
     resources :answers
     resources :exercises do
       resources :questions do
