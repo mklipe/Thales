@@ -8,9 +8,6 @@ class Thales.Views.ExercisesShow extends Backbone.View
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el])
     this
 
-  initialize: ->
-
-
   showQuestions: () ->
     @model.get('questions').fetch success: =>
       view = new Thales.Views.QuestionsIndex(model: @model.get('questions'))

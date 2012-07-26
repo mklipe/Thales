@@ -1,7 +1,10 @@
-<div class="question">
-    <h2><%= @question.get('title') %></h2>
-    <p><%= @question.get('content') %></p>
-    <form>
-    	<input type="text"></input>
-    </form>
-</div>
+<hr />
+<h2><%= @question.get('title') %></h2>
+<p><%= @question.get('content') %></p>
+
+<form id="new-answer-<%= @question.get('id') %>">
+  <p>
+    <input name="answer" type="text" placeholder="Digite sua resposta."></input>
+  </p>
+  <input type="submit" class="btn">
+</form>

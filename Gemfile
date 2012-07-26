@@ -26,6 +26,7 @@ group :assets do
   gem 'backbone-on-rails'
   gem 'underscore'
   gem 'twitter-bootstrap-rails'
+  gem 'bootswatch-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
@@ -35,6 +36,12 @@ end
 
 gem 'jquery-rails'
 gem 'formtastic'
+gem 'math_engine'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

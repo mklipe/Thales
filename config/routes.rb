@@ -17,7 +17,9 @@ Thales::Application.routes.draw do
   scope "api" do
     resources :answers
     resources :exercises do
-      resources :questions
+      resources :questions do
+        resources :answers
+      end
     end
     resources :introductions
   end

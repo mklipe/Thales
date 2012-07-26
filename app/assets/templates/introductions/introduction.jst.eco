@@ -1,4 +1,4 @@
-<article class="introduction" align="center">
+<article class="introduction">
     <header>
     	<h2><%= @introduction.get('title') %></h2>
     </header>
