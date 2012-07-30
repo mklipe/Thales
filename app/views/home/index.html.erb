@@ -1,4 +1,7 @@
 <div id="content">
+	<% if user_signed_in? %>
+	 	<p>Loading... </p>
+	<% else %>
 	<div class="hero-unit ">
   		<h1>Thales</h1>
   		<p></p>
@@ -11,5 +14,6 @@
       		Iniciar
     		</a>
   		</p>
+  	<% end %>	
 	</div>
 </div>

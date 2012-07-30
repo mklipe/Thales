@@ -2,7 +2,6 @@
     <header>
     	<h2><%= @exercise.get('title') %></h2>
     </header>
-    
-    <%- (@exercise.get('content'))%> 	  
+    <%- (@exercise.get('content'))%> 	 
 </article>
  

@@ -1,7 +1,6 @@
 Thales::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   mount Ckeditor::Engine => '/ckeditor'
 
   match '/auth/:provider/callback' => 'authentications#create'

@@ -5,8 +5,8 @@ window.Thales =
   Routers: {}
 
   init: ->
-    currentUser = new Thales.Models.Currentuser()
-    currentUser.fetch 
+    currentuser = new Thales.Models.Currentuser()
+    currentuser.fetch 
       success: () =>
         new Thales.Routers.ExercisesRouter()
         new Thales.Routers.IntroductionsRouter()

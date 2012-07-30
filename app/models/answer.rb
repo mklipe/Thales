@@ -1,4 +1,6 @@
 require 'math_evaluate'
+require 'rubygems'
+require 'math_engine'
 
 class Answer
   include Mongoid::Document
@@ -15,6 +17,8 @@ class Answer
   after_save :verify_response  
   
   def verify_response
-     self.correct= MathEvaluate::Expression.eql?(self.question.correct_answer, self.response)
+    engine = MathEngine.new
+    
+    self.correct = MathEvaluate::Expression.eql?(engine.evaluate("y = " + self.question.correct_answer), engine.evaluate("x = " + self.response))
   end
 end

@@ -1,10 +1,10 @@
 <hr />
 <h2><%= @question.get('title') %></h2>
-<p><%= @question.get('content') %></p>
+<p class="lead"><%= @question.get('content') %></p>
 
-<form id="new-answer-<%= @question.get('id') %>">
+<form id="<%= @question.get('title') %>">
   <p>
     <input name="answer" type="text" placeholder="Digite sua resposta."></input>
   </p>
-  <input type="submit" class="btn">
+  <input name="botao" type="submit" class="btn">
 </form>
