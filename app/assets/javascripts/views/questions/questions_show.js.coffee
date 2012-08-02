@@ -5,6 +5,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
   
   render: ->
     $(@el).html(@template(question: @model))
+    console.log(@model)
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el]);
     this
     
@@ -21,14 +22,14 @@ class Thales.Views.QuestionsShow extends Backbone.View
       answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: currentuser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
-          console.log('Acertou')
+          #console.log('Acertou')
           $(e.delegateTarget).removeClass('error')
           $(e.delegateTarget).addClass('success')
                
         else
-          console.log('Errou')
+          #console.log('Errou')
           $(e.delegateTarget).removeClass('success')
           $(e.delegateTarget).addClass('error')
                           
       error: ->
-        console.log(answer, ' Error ')
+        console.log(answer, 'Error QuestionsShow')

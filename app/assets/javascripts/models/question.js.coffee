@@ -10,6 +10,15 @@ class Thales.Models.Question extends Backbone.RelationalModel
     reverseRelation: {
       key: 'answer'
     }
+  },
+  {
+    type: Backbone.HasMany
+    key: 'tips'
+    relatedModel: 'Thales.Models.Tip'
+    #collectionType: 'Thales.Collections.TipsCollection'
+    reverseRelation: {
+      key: 'tip'
+    }
   }]  
 
 Thales.Models.Question.setup()

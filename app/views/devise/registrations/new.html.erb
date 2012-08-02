@@ -13,7 +13,7 @@
   <div><%= f.label "Confirmação da senha" %>
   <%= f.password_field :password_confirmation %></div>
 <br />
-  <div><%= f.submit "Registrar" %></div>
+  <div><%= f.submit "Registrar", :class => "btn btn-primary btn-large" %></div>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

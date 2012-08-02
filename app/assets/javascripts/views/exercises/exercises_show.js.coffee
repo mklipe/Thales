@@ -5,7 +5,7 @@ class Thales.Views.ExercisesShow extends Backbone.View
   render: ->
     $(@el).html(@template(exercise: @model))
     @showQuestions()
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el])
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, @el])
     this
 
   showQuestions: () ->

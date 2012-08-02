@@ -5,11 +5,8 @@ class Thales.Routers.IntroductionsRouter extends Backbone.Router
     
     
   list: (page) ->
-    console.log(page)
     page = (if page then parseInt(page, 10) else 1)
-    console.log(page)   
     introductions = new Thales.Collections.Introductions()
-    console.log(introductions)
     introductions.fetch 
       success: ->
         $("#content").html new Thales.Views.IntroductionsIndex(
@@ -17,5 +14,5 @@ class Thales.Routers.IntroductionsRouter extends Backbone.Router
           page: page
         ).el
       error: ->
-        console.log('request error oooo')  
+        console.log('Error IntroductionsRouter')  
 

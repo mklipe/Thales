@@ -4,8 +4,13 @@ class Thales.Views.ExercisesIndex extends Backbone.View
     @render()
  
   events: ->
-    'click .pagination-link': 'showExercise'
+    'click .pagination-link previous': 'showIntroduction'
+    'click .pagination-link real': 'showExercise'
 
+  showIntroduction: (ev) ->
+    ev.preventDefault()
+    new Thales.Routers.IntroductionsRouter()
+  
   showExercise: (ev) ->
     ev.preventDefault()
     href = $(ev.currentTarget).attr('href')

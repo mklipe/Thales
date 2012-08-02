@@ -1,6 +1,5 @@
 require 'math_evaluate'
-require 'rubygems'
-require 'math_engine'
+#require File.expand_path("../../../lib/math/math_evaluate", __FILE__)
 
 class Answer
   include Mongoid::Document
@@ -13,12 +12,12 @@ class Answer
   
   field :response
   field :correct, type: Boolean
-
+  field :retry_number
+  
   after_save :verify_response  
   
   def verify_response
-    engine = MathEngine.new
-    
-    self.correct = MathEvaluate::Expression.eql?(engine.evaluate("y = " + self.question.correct_answer), engine.evaluate("x = " + self.response))
+    self.correct = MathEvaluate::Expression.eql?(self.question.correct_answer, self.response)
   end
+  
 end

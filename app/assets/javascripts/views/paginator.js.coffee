@@ -17,7 +17,12 @@ class Thales.Views.Paginator extends Backbone.View
     href = "/" + items[0].get('type') + "/page/"
     
     for i in [0...pageCount]
-      $("ul", @el).append "<li" + (if (i + 1) is @options.page then " class='active'" else "") + "><a rel='tooltip' title='"+items[i].get('title')+"'data-page='"+i+"' class='pagination-link' href='" + href + "" + (i + 1) + "'>" + (i + 1) + "</a></li>"
+      $("ul", @el).append "<li" + (if (i + 1) is @options.page then " class='active'" else "") + "><a rel='tooltip' title='"+items[i].get('title')+"'data-page='"+i+"' class='pagination-link real' href='" + href + "" + (i + 1) + "'>" + (i + 1) + "</a></li>"
       i++ 
-                   
+    
+    if items[0].get('type') == 'exercises' 
+      $("ul", @el).prepend "<li><a id='introductions' rel='tooltip' title='Introdução' data-page='introdução' class='pagination-link previous' href= '/introductions/page/1' > Introdução </a></li>"  
+    else
+      $("ul", @el).append "<li><a id='exercises' rel='tooltip' title='Exercícios' data-page='exercícios' class='pagination-link next' href= '/exercises/page/1' > Exercícios </a></li>"            
+    
     this
