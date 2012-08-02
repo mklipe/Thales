@@ -1,3 +1,4 @@
+# encoding: utf-8
 # RailsAdmin config file. Generated on June 08, 2012 10:24
 # See github.com/sferik/rails_admin for more informations
 
@@ -170,7 +171,29 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-   config.model Exercise do
+  config.model Tip do
+    label "Dica"
+  end
+  
+  config.model User do 
+    label "Usuário"
+  end  
+  
+  config.model Answer do 
+    label "Resposta"
+  end
+  
+  config.model Authentication do
+    label "Autenticação"
+  end
+  
+  config.model Question do
+    label "Questão"
+  end
+    
+  config.model Exercise do
+    label "Exercício"
+    
     list do
       field :title
     end
@@ -181,20 +204,22 @@ RailsAdmin.config do |config|
         ckeditor true
       end
     end
-   end 
+  end 
     
-   config.model Introduction do
+  config.model Introduction do
+    label "Introducão"
+     
     list do
       field :title
     end
      
-     edit do
+    edit do
       field :title, :text
       field :content, :text do
         ckeditor true
       end
-     end
     end
+  end
     
   
   #   # Found associations:
