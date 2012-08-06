@@ -5,12 +5,22 @@ module MathEvaluate
   module Expression
     def self.eql?(correct_answer, response)
       
-      engine = MathEngine.new
+      begin
+        engine = MathEngine.new
       
-      y = engine.evaluate("y = " + correct_answer)
-      x = engine.evaluate("x = " + response)
+        y = engine.evaluate("y = " + correct_answer)
+        x = engine.evaluate("x = " + response)
+  
+        #puts "x: #{x}"
+        #puts "y: #{y}"
+        r = (x - y).abs
+              
+        return  r < 0.00001
+      rescue => e
+        puts e
+        return false
+      end
       
-      y == x
     end
   end
 end

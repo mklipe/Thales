@@ -2,9 +2,11 @@
 <h2><%= @question.get('title') %></h2>
 <p class="lead"><%= @question.get('content') %></p>
 
-<form id="<%= @question.get('title') %>">
+<form class="well form-horizontal" id="<%= @question.get('title') %>">
   <p>
-    <input name="answer" type="text" placeholder="Digite sua resposta."></input>
+    <input name="answer" type="text" placeholder="Digite sua resposta." />
+    <span id="<%= @question.get('id') %>" class="help-inline"></span>
   </p>
-  <input name="botao" type="submit" class="btn">
+  <label class=help-inline></label>
+  <button name="botao" type="submit" class="btn">Enviar</button>
 </form>

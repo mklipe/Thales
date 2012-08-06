@@ -4,8 +4,8 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     @render()
  
   events: ->
-    'click .pagination-link next': 'showExercise'
-    'click .pagination-link real': 'showIntroduction'
+    'click .pagination-link.next': 'showExercise'
+    'click .pagination-link.real': 'showIntroduction'
 
   showIntroduction: (ev) ->
     ev.preventDefault()
@@ -14,11 +14,14 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     
     $($(@el).children()[0]).replaceWith(new Thales.Views.IntroductionsShow(model: @model.models[page]).render().el )
     
-    Backbone.history.navigate(href, true)
+    Backbone.history.navigate(href, false)
+ 
     
   showExercise: (ev) ->
     ev.preventDefault()
-    new Thales.Routers.ExercisesRouter()
+    console.log(ev,'oi')
+    Backbone.history.navigate('/exercises/page/1', true)
+  
     
   render: ->
     introductions = @model.models

@@ -22,7 +22,12 @@ describe "math evalute" do
     MathEvaluate::Expression.eql?('6.2', '6.1 + 0.1').should be_true
   end
   
-   it "the params are not equals the should be false" do
+  it "the params are not equals the should be false" do
     MathEvaluate::Expression.eql?('1000', '100 + 0.0').should be_false
   end
+  
+  it "shoul return false if empty string is sent" do
+    MathEvaluate::Expression.eql?('', '100 + 0.0').should be_false
+  end
+  
 end

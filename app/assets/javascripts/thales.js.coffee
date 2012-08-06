@@ -10,6 +10,7 @@ window.Thales =
       success: () =>
         new Thales.Routers.ExercisesRouter()
         new Thales.Routers.IntroductionsRouter()
+        Thales.currentUser = currentuser
         Backbone.history.start({pushState : true})
       error: () => console.log('Precisa logar')
 

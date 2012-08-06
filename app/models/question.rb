@@ -7,5 +7,7 @@ class Question
   belongs_to :exercise
   has_many :answers
   has_many :tips
+  has_many :tips_counts  
+  
 end
 

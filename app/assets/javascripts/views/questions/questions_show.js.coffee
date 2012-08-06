@@ -17,19 +17,21 @@ class Thales.Views.QuestionsShow extends Backbone.View
     e.preventDefault()
     
     answer = new Thales.Models.Answer()
-    currentuser = new Thales.Models.Currentuser()
-    currentuser.fetch success: () =>
-      answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: currentuser.get('id')}),
+    
+    answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
-          #console.log('Acertou')
           $(e.delegateTarget).removeClass('error')
           $(e.delegateTarget).addClass('success')
-               
+          $("span#" + model.get('question').get('id')).html("<span class='label label-success'>Resposta correta, Parabéns!</span")
+          $(e.srcElement.form.answer).prop('disabled', true)
+          $(e.srcElement).hide()
         else
-          #console.log('Errou')
+          $("span#" + model.get('question').get('id')).html("<span class='label label-important'>Resposta errada, Tente novamente!</span><div class='alert alert-error'>Tentativas: " + model.get('try_number') + "<br />Dica: " + model.get('tip') + "</div>")
           $(e.delegateTarget).removeClass('success')
           $(e.delegateTarget).addClass('error')
-                          
-      error: ->
-        console.log(answer, 'Error QuestionsShow')
+                                    
+      error: (obj, resp) ->
+        console.log(resp, 'Status')
+        result = $.parseJSON(resp.responseText)
+        alert result.error

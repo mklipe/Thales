@@ -1,7 +1,7 @@
 class Tip
   include Mongoid::Document
   field :content
-  field :try_number
+  field :number_of_tries, type: Integer
   
   belongs_to :question
 end

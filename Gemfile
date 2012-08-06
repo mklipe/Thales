@@ -37,6 +37,7 @@ end
 gem 'jquery-rails'
 gem 'formtastic'
 gem 'math_engine'
+gem 'acts-as-taggable-on'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
