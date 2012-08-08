@@ -9,6 +9,7 @@ class Answer
   
   belongs_to :user
   belongs_to :question
+  belongs_to :last_answer
   
   field :response
   field :correct, type: Boolean
@@ -20,7 +21,6 @@ class Answer
   def verify_response
     self.correct = MathEvaluate::Expression.eql?(self.question.correct_answer, self.response)
     get_tip if !self.correct 
-  
   end
   
   def get_tip

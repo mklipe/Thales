@@ -41,6 +41,7 @@ gem 'acts-as-taggable-on'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'railroady'
 end
 
 # To use ActiveModel has_secure_password

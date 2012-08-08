@@ -45,6 +45,7 @@ GEM
     bson_ext (1.6.2)
       bson (~> 1.6.2)
     builder (3.0.0)
+    choice (0.1.6)
     ckeditor (3.7.1)
       mime-types
       orm_adapter
@@ -158,6 +159,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    railroady (1.0.8)
     rails (3.2.3)
       actionmailer (= 3.2.3)
       actionpack (= 3.2.3)
@@ -166,6 +168,11 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
+    rails-erd (1.0.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      choice (~> 0.1.6)
+      ruby-graphviz (~> 1.0.4)
     rails_admin (0.0.4)
       bbenezech-nested_form (~> 0.0.6)
       bootstrap-sass (~> 2.0, >= 2.0.3)
@@ -203,6 +210,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    ruby-graphviz (1.0.8)
     sass (3.1.18)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -253,7 +261,9 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
+  railroady
   rails (= 3.2.3)
+  rails-erd
   rails_admin
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
