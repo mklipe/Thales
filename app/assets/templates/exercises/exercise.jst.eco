@@ -1,7 +1,8 @@
-<article class="exercise">
+<article class="exercise" id="<%= @exercise.get('title') %>">
     <header>
     	<h2><%= @exercise.get('title') %></h2>
     </header>
-    <%- (@exercise.get('content'))%> 	 
+    <%- (@exercise.get('content'))%> 
+    <section class="questions" id="questions_list"></section>	 
 </article>
  

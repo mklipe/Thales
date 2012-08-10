@@ -1,4 +1,4 @@
-<section class="well">
+<section class="well login_form">
 <div><h2>Esqueceu sua senha?</h2></div>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
@@ -7,7 +7,7 @@
   <div><%= f.label :email, "E-mail" %>
   <%= f.email_field :email %></div>
 
-  <div><%= f.submit "Envie-me instruções para troca de senha" %></div>
+  <div><%= f.submit "Envie-me instruções para troca de senha.", :class => "btn btn-primary" %></div>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

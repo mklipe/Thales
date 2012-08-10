@@ -14,7 +14,7 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     
     $($(@el).children()[0]).replaceWith(new Thales.Views.IntroductionsShow(model: @model.models[page]).render().el )
     
-    Backbone.history.navigate(href, false)
+    Backbone.history.navigate(href, true)
  
     
   showExercise: (ev) ->

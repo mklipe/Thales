@@ -1,6 +1,6 @@
 class Thales.Views.Paginator extends Backbone.View
 
-  className: "pagination pagination-centered navbar-fixed-bottom"
+  className: "pagination pagination-centered navbar-fixed-bottom bar"
   
   initialize: ->
     @model.bind "reset", @render, this

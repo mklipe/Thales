@@ -5,7 +5,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
   
   render: ->
     $(@el).html(@template(question: @model))
-    console.log(@model)
+    #console.log(@model)
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el]);
     this
     
@@ -32,6 +32,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
           $(e.delegateTarget).addClass('error')
                                     
       error: (obj, resp) ->
-        console.log(resp, 'Status')
+        #console.log(resp, 'Status')
         result = $.parseJSON(resp.responseText)
         alert result.error
+        

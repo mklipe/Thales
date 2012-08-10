@@ -6,7 +6,7 @@ class Thales.Views.QuestionsIndex extends Backbone.View
 
   appendQuestion: (question) =>
     view = new Thales.Views.QuestionsShow(model: question)
-    $('#content').append(view.render().el)
+    $('#questions_list').append(view.render().el)
 
   
     
