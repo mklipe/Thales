@@ -19,6 +19,7 @@ Thales::Application.routes.draw do
     resources :users
     resources :user
     resources :answers
+    resources :last_answers
     resources :exercises do
       resources :questions do
         resources :answers

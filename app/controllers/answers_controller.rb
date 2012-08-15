@@ -1,17 +1,17 @@
 class AnswersController < ApplicationController
-  
   before_filter :authenticate_user!
+  respond_to :json
   
   def create
-    @answer = Answer.new(params[:answer])
+    last = Answer.last # ultima resposta do mesmo usuario e da mesma questao
     
-    respond_to do |format|
-      if @answer.save
-        format.json { render json: @answer, status: :created, location: @answer }
-      else
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
+    if (last.response == params[:answer][:response] )
+      @answer = last
+      respond_with(@answer)
+    else 
+      respond_with(Answer.create(params[:answer]))
     end
+    
   end
   
 end

@@ -42,6 +42,6 @@ class User
   
   has_many :answers
   has_many :tips_counts
-  #has_many :last_answers
+  has_many :last_answers
   
 end

@@ -17,7 +17,11 @@ class Thales.Views.ExercisesIndex extends Backbone.View
     page = $(ev.currentTarget).data('page')
     
     $($(@el).children()[0]).replaceWith(new Thales.Views.ExercisesShow(model: @model.models[page]).render().el )
-    Backbone.history.navigate(href, true)
+    
+    $(ev.currentTarget).parent().siblings().removeClass('active')
+    $(ev.currentTarget).parent().addClass('active')
+    
+    Backbone.history.navigate(href, false)
     
   render: ->
     exercises = @model.models

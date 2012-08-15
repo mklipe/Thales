@@ -5,7 +5,7 @@ class Question
   field :correct_answer
   
   belongs_to :exercise
-  belongs_to :last_answer
+  has_many :last_answers #one last answer for each user
   has_many :answers
   has_many :tips
   has_many :tips_counts  

@@ -190,6 +190,10 @@ RailsAdmin.config do |config|
   config.model Question do
     label "Questão"
   end
+  
+  config.model TipsCount do
+    label "Tentativas"
+  end
     
   config.model Exercise do
     label "Exercício"

@@ -5,7 +5,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
   
   render: ->
     $(@el).html(@template(question: @model))
-    #console.log(@model)
+    
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el]);
     this
     

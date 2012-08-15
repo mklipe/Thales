@@ -13,13 +13,14 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     page = $(ev.currentTarget).data('page')
     
     $($(@el).children()[0]).replaceWith(new Thales.Views.IntroductionsShow(model: @model.models[page]).render().el )
+    $(ev.currentTarget).parent().siblings().removeClass('active')
+    $(ev.currentTarget).parent().addClass('active')
     
-    Backbone.history.navigate(href, true)
+    Backbone.history.navigate(href, false)
  
     
   showExercise: (ev) ->
     ev.preventDefault()
-    console.log(ev,'oi')
     Backbone.history.navigate('/exercises/page/1', true)
   
     

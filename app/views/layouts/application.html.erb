@@ -6,25 +6,13 @@
   <%= javascript_include_tag "application" %>
     
   <%= csrf_meta_tags %>
-  <script type="text/javascript"
-	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full">
-  </script>
-  <script type="text/x-mathjax-config">
-	//<![CDATA[
-	    MathJax.Hub.Config({
-	      asciimath2jax: {
-		delimiters: [['`','`'], ['$','$']]
-	      }
-	    });
-	 //]]>
-  </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       
-      	<a class="brand" href="#"><% image_tag("logo.png", :size => "120x40") %></a>
+      	<a class="brand" href="#">Thales</a>
       	<div class="nav-collapse">
       		
   
@@ -78,5 +66,17 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full">
+  </script>
+  <script type="text/x-mathjax-config">
+	//<![CDATA[
+	    MathJax.Hub.Config({
+	      asciimath2jax: {
+		delimiters: [['`','`'], ['$','$']]
+	      }
+	    });
+	 //]]>
+  </script>	
 </body>
 </html>

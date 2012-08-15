@@ -1,9 +1,9 @@
 class TipsController < ApplicationController
   def index
-    @questions = Question.find(params[:question_id]).tips
+    @tips = Question.find(params[:question_id]).tips
 
     respond_to do |format|
-      format.json { render json: @questions }
+      format.json { render json: @tips }
     end
   end
 

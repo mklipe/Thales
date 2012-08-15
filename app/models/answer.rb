@@ -16,32 +16,38 @@ class Answer
   field :tip
   field :try_number, type: Integer
   
-  after_save :verify_response  
+  before_save :verify_response  
+  after_save :register_last_answer
   
   def verify_response
-    self.correct = MathEvaluate::Expression.eql?(self.question.correct_answer, self.response)
-    get_tip if !self.correct 
+    question = Question.find(self.question_id) 
+    self.correct = MathEvaluate::Expression.eql?(question.correct_answer, self.response)
+    if !self.correct
+      get_tip
+    else
+      @tips_count = self.question.tips_counts.find_or_create_by(:user_id => self.user.id)
+      self.try_number = @tips_count.tries
+    end 
   end
   
   def get_tip
     self.tip = "Tem algo errado!"
   
     @tips_count = self.question.tips_counts.find_or_create_by(:user_id => self.user.id)
-    
     @tips_count.inc(:tries, 1)
     self.try_number = @tips_count.tries
     
-    @tips = self.question.tips.where(:number_of_tries.lte => @tips_count.tries)#.max(:number_of_tries)
-        
-    if !@tips.empty? # Tem alguma dica?
-      @matched = Array.new
-      @tips.each{ |x| 
-        if x.number_of_tries <=  @tips_count.tries # Dica pode ser mostrada
-          @matched << x
-        end }
-        self.tip = @matched.max.content if !@matched.empty? # Melhor dica..
-    end
+    tip = self.question.tips.where(:number_of_tries.lte => @tips_count.tries).desc(:number_of_tries).first
     
+    if tip # Tem alguma dica?
+      self.tip = tip.content # Melhor dica..    
+    end
+
+  end
+  
+  def register_last_answer
+    @last_answer = self.user.last_answers.find_or_create_by(:question_id => self.question.id)
+    @last_answer.set(:answer_id, self.id)
   end
   
 end
