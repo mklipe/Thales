@@ -4,12 +4,11 @@ require 'math_evaluate'
 class Answer
   include Mongoid::Document
   include Mongoid::Timestamps
-  
   include MathEvaluate
   
   belongs_to :user
   belongs_to :question
-  belongs_to :last_answer
+  has_one :last_answer
   
   field :response
   field :correct, type: Boolean
@@ -39,8 +38,8 @@ class Answer
     
     tip = self.question.tips.where(:number_of_tries.lte => @tips_count.tries).desc(:number_of_tries).first
     
-    if tip # Tem alguma dica?
-      self.tip = tip.content # Melhor dica..    
+    if tip
+      self.tip = tip.content  
     end
 
   end
@@ -48,6 +47,7 @@ class Answer
   def register_last_answer
     @last_answer = self.user.last_answers.find_or_create_by(:question_id => self.question.id)
     @last_answer.set(:answer_id, self.id)
+    #@last_answer.update
   end
   
 end

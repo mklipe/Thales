@@ -12,6 +12,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
   events: ->
     'click .btn': 'sendAnswer'
     'submit' : 'sendAnswer'
+    #'reset' : 'showLastAnswer'
   
   sendAnswer: (e) ->
     e.preventDefault()

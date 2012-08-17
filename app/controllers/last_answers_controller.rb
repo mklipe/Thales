@@ -12,20 +12,21 @@ class LastAnswersController < ApplicationController
     end
   end
   
-  def show
-    @last_answers = Exercise.find(params[:exercise_id]).questions.last_answers
-    respond_to do |format|
-      format.json { render json: @last_answers } 
-    end
-  end
+  #def show
+   # @last_answers = User.find(current_user.id).last_answers 
+    #respond_to do |format|
+     # format.json { render json: @last_answers } 
+  #  end
+  #end
   
   def index
-    @last = User.find(current_user.id).last_answers
+    
+    @last = LastAnswer.where(user_id: current_user.id).and(question_id: params[:question_id]).first
+    #http://localhost:3000/api/exercises/exercicio-2/questions/4ffdfd9b1d41c814e50000f1/last_answers.json
     
     respond_to do |format|
-      format.json { render json: @last}
-    end
+      format.json { render json: @last.answer, :only => [:question_id, :correct, :response, :tip, :try_number] }
+    end   
   end
-  
   
 end

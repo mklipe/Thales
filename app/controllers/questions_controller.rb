@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
     @questions = Exercise.find(params[:exercise_id]).questions
 
     respond_to do |format|
-      format.json { render json: @questions }
+      format.json { render json: @questions } #, :include => :last_answers }
+      
     end
   end
 
@@ -12,7 +13,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     respond_to do |format|
-      format.json { render json: @question }
+      format.json { render json: @question } #, :include => :last_answers}
     end
   end
 

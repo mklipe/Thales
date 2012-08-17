@@ -6,9 +6,16 @@ class Thales.Models.Question extends Backbone.RelationalModel
     type: Backbone.HasMany
     key: 'answers'
     relatedModel: 'Thales.Models.Answer'
-    #collectionType: 'Thales.Collections.AnswersCollection'
     reverseRelation: {
-      key: 'answer'
+      key: 'question'
+    }
+  }, {
+    type: Backbone.HasOne
+    key: 'lastanswer'
+    relatedModel: 'Thales.Models.LastAnswer'
+    reverseRelation: {
+      type: Backbone.HasOne
+      key: 'question'
     }
   }]  
 

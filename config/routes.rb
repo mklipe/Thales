@@ -1,7 +1,7 @@
 Thales::Application.routes.draw do
 
   resources :tips
-
+  resources :last_answers
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -19,9 +19,10 @@ Thales::Application.routes.draw do
     resources :users
     resources :user
     resources :answers
-    resources :last_answers
+    
     resources :exercises do
       resources :questions do
+        resources :last_answers
         resources :answers
       end
     end

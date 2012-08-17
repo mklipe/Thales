@@ -8,5 +8,4 @@ class Thales.Models.Answer extends Backbone.RelationalModel
       user_id: this.get('user_id')
       question_id: this.get('question').get('id')
       
-
 Thales.Models.Answer.setup()

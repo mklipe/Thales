@@ -1,6 +1,10 @@
 class User
   include Mongoid::Document
+  
   has_many :authentications
+  has_many :answers
+  has_many :tips_counts
+  has_many :last_answers
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -39,9 +43,5 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
-  
-  has_many :answers
-  has_many :tips_counts
-  has_many :last_answers
-  
+    
 end
