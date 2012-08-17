@@ -3,10 +3,12 @@
 <p class="bigger"><%= @question.get('content') %></p>
 
 <form class="well form-horizontal" id="<%= @question.get('title') %>">
-  <p>
+  
     <input name="answer" type="text" placeholder="Digite sua resposta." />
     <span id="<%= @question.get('id') %>" class="help-inline"></span>
-  </p>
+ 
   <label class=help-inline></label>
+  
   <button name="botao" type="submit" class="btn btn-primary">Enviar</button>
 </form>
+

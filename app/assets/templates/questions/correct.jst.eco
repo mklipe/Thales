@@ -1,0 +1,13 @@
+<hr />
+<h2><%= @question.get('title') %></h2>
+<p class="bigger"><%= @question.get('content') %></p>
+
+<form class="well form-horizontal" id="<%= @question.get('title') %>">
+  
+    <% resp = @question.get('last_answer').response  %>
+    <input name="answer" type="text" disabled="disabled" value="<%= resp %>" />
+    
+    <span class='label label-success'>Resposta correta, Parabéns!</span>
+ 
+</form>
+

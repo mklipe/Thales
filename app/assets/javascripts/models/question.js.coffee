@@ -8,15 +8,7 @@ class Thales.Models.Question extends Backbone.RelationalModel
     relatedModel: 'Thales.Models.Answer'
     reverseRelation: {
       key: 'question'
-    }
-  }, {
-    type: Backbone.HasOne
-    key: 'lastanswer'
-    relatedModel: 'Thales.Models.LastAnswer'
-    reverseRelation: {
-      type: Backbone.HasOne
-      key: 'question'
-    }
-  }]  
-
+    }  
+  }]
+  
 Thales.Models.Question.setup()

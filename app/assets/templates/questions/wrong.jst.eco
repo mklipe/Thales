@@ -1,0 +1,30 @@
+<hr />
+<h2><%= @question.get('title') %></h2>
+<p class="bigger"><%= @question.get('content') %></p>
+
+<form class="well form-horizontal" id="<%= @question.get('title') %>">
+  
+  	<% resp = @question.get('last_answer').response  %>
+  	<% try_number = @question.get('last_answer').try_number %>
+  	<% tip =  @question.get('last_answer').tip %>
+    <input name="answer" type="text" placeholder="Digite sua resposta." value="<%= resp %>" />
+   
+    <span id="<%= @question.get('id') %>" class="help-inline">
+    	<span class='label label-important'>Resposta errada, Tente novamente!</span>
+		<div class='alert alert-error nopadding'>
+			Tentativa: <%= try_number %> <br /> 
+			Dica: <%= tip %>
+		</div>
+    </span>
+  <br />
+  <button name="botao" type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+
+
+
+
+
+
+

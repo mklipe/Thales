@@ -150,6 +150,9 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
+    rabl (0.7.1)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -239,6 +242,7 @@ GEM
     underscore (0.0.0)
     warden (1.1.1)
       rack (>= 1.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -260,6 +264,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
+  rabl
   railroady
   rails (= 3.2.3)
   rails_admin
@@ -270,3 +275,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   underscore
+  yajl-ruby

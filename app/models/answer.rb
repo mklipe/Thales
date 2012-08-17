@@ -47,7 +47,7 @@ class Answer
   def register_last_answer
     @last_answer = self.user.last_answers.find_or_create_by(:question_id => self.question.id)
     @last_answer.set(:answer_id, self.id)
-    #@last_answer.update
+    #@last_answer.save
   end
   
 end
