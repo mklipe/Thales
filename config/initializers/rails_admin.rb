@@ -191,6 +191,10 @@ RailsAdmin.config do |config|
     label "Questão"
   end
   
+  config.model LastAnswer do
+    label "Última Resposta"
+  end
+  
   config.model TipsCount do
     label "Tentativas"
   end

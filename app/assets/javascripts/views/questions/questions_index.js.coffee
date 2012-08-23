@@ -8,11 +8,9 @@ class Thales.Views.QuestionsIndex extends Backbone.View
     if question.get('last_answer')
       if question.get('last_answer').correct
         view = new Thales.Views.QuestionsCorrect(model: question)
-        console.log("Correto!")
         $('#questions_list').append(view.render().el)
       else
         view = new Thales.Views.QuestionsWrong(model: question)
-        console.log("Errado!")
         $('#questions_list').append(view.render().el)
     else
       view = new Thales.Views.QuestionsShow(model: question)

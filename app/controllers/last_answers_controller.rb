@@ -1,6 +1,6 @@
 class LastAnswersController < ApplicationController
   
-  
+=begin  
   def index
     @last = LastAnswer.first(conditions: {user_id: current_user.id, question_id: params[:question_id]})
     #http://localhost:3000/api/exercises/exercicio-2/questions/4ffdfd9b1d41c814e50000f1/last_answers.json
@@ -13,6 +13,7 @@ class LastAnswersController < ApplicationController
       end
     end   
   end  
+=end
   
   def create
     @last_answer = LastAnswer.new(params[:question, :user])
@@ -25,12 +26,5 @@ class LastAnswersController < ApplicationController
       end
     end
   end
-  
-  #def show
-   # @last_answers = User.find(current_user.id).last_answers 
-    #respond_to do |format|
-     # format.json { render json: @last_answers } 
-  #  end
-  #end
   
 end

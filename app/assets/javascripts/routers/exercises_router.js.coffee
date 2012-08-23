@@ -10,7 +10,6 @@ class Thales.Routers.ExercisesRouter extends Backbone.Router
 
     exercises.fetch
       success: ->
-        $("#content").addClass('span9')
         $("#content").html new Thales.Views.ExercisesIndex(
           model: exercises
           page: page

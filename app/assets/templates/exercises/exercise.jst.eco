@@ -1,8 +1,21 @@
 <article class="exercise" id="<%= @exercise.get('title') %>">
-    <header>
-    	<h2><%= @exercise.get('title') %></h2>
-    </header>
-    <%- (@exercise.get('content'))%> 
-    <section class="questions" id="questions_list"></section>	 
+<div class="row-fluid row">
+	<div class="span9">
+    	<header>
+    		<h2><%= @exercise.get('title') %></h2>
+    	</header>
+    
+    	<%- (@exercise.get('content'))%> 
+    
+    	<section class="questions" id="questions_list"></section>
+    </div>
+    <section class="answers span3" id="answers_list">
+    	<h4>
+    	<div class="well fixed">
+    		Últimas respostas para este exercício
+    		</div>
+    	</h4>
+    </section>	 
+</div>
 </article>
  

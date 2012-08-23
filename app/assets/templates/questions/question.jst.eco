@@ -8,7 +8,7 @@
     <span id="<%= @question.get('id') %>" class="help-inline"></span>
  
   <label class=help-inline></label>
-  
-  <button name="botao" type="submit" class="btn btn-primary">Enviar</button>
+   <br />
+  <button name="botao" type="submit" class="btn btn-primary padd">Enviar</button>
 </form>
 

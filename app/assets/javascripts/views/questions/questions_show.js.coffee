@@ -4,7 +4,6 @@ class Thales.Views.QuestionsShow extends Backbone.View
   template: JST['questions/question']
   
   render: ->
-    console.log(@model)
     $(@el).html(@template(question: @model))
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el]);
     this
@@ -30,6 +29,7 @@ class Thales.Views.QuestionsShow extends Backbone.View
           $("span#" + model.get('question').get('id')).html("<span class='label label-important'>Resposta errada, Tente novamente!</span><div class='alert alert-error nopadding'>Tentativas: " + model.get('try_number') + "<br />Dica: " + model.get('tip') + "</div>")
           $(e.delegateTarget).removeClass('success')
           $(e.delegateTarget).addClass('error')
+          $(e.srcElement).removeClass('padd')
                                     
       error: (obj, resp) ->
         result = $.parseJSON(resp.responseText)
