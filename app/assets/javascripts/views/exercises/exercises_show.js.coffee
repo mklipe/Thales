@@ -5,7 +5,7 @@ class Thales.Views.ExercisesShow extends Backbone.View
   render: ->
     $(@el).html(@template(exercise: @model))
     @showQuestions()
-    #@showRecentAnswers()
+    @showRecentAnswers()
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, @el])
     this
 
@@ -14,8 +14,7 @@ class Thales.Views.ExercisesShow extends Backbone.View
       view = new Thales.Views.QuestionsIndex(model: @model.get('questions'))
       $(@el).append(view.render().el)
 
-  #showRecentAnswers: () ->
-    #console.log("Hello")
-    #@model.get('questions').fetch success: =>
-    #view = new Thales.Views.RecentAnswers(model: @model.get('recent_answers'))
-    #$(@el).append(view.render().el)
+  showRecentAnswers: () ->
+    @model.get('answers').fetch success: =>
+      view = new Thales.Views.RecentsIndex(model: @model.get('answers'))
+      $(@el).append(view.render().el)

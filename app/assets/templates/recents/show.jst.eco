@@ -1,0 +1,4 @@
+<hr />
+<b><%= @answer.get('user').email %></b>
+<p>Respondeu (<%= @answer.get('question').get('title') %>): <%= @answer.get('response') %></p>
+

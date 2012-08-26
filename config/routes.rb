@@ -1,11 +1,14 @@
 Thales::Application.routes.draw do
 
+  resources :comments
+
   resources :tips
-  resources :last_answers
+  #resources :last_answers
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
 
   match '/auth/:provider/callback' => 'authentications#create'
+  match 'api/answers/:exercise_id/recents/' => "answers#recents"
 
   devise_for :users
   resources :authentications
@@ -19,8 +22,8 @@ Thales::Application.routes.draw do
     resources :users
     resources :user
     resources :answers
-    
     resources :exercises do
+      resources :answers 
       resources :questions do
         resources :last_answers
         resources :answers

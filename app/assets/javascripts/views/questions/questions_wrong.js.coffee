@@ -16,7 +16,8 @@ class Thales.Views.QuestionsWrong extends Backbone.View
     e.preventDefault()
     
     answer = new Thales.Models.Answer()
-    
+    if (e.srcElement.form.answer.value == "") 
+      alert('Digite algum valor')
     answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
@@ -28,6 +29,7 @@ class Thales.Views.QuestionsWrong extends Backbone.View
           $(e.srcElement.form.answer).prop('disabled', true)
           $(e.srcElement).hide()
         else
+          
           $("span#" + model.get('question').get('id')).html("<span class='label label-important'>Resposta errada, Tente novamente!</span><div class='alert alert-error nopadding'>Tentativas: " + model.get('try_number') + "<br />Dica: " + model.get('tip') + "</div>")
           $(e.delegateTarget).removeClass('success')
           $(e.delegateTarget).addClass('error')

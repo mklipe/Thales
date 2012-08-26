@@ -14,9 +14,16 @@ class Answer
   field :correct, type: Boolean
   field :tip
   field :try_number, type: Integer
+  field :exercise_id
   
   before_save :verify_response  
   after_save :register_last_answer
+  before_save :update_exercise_id
+  
+  scope :wrong, lambda { |exer_id| where(correct: false, "exercise_id" => exer_id) }
+  
+  default_scope order_by([:created_at, :desc])
+
   
   def verify_response
     question = Question.find(self.question_id) 
@@ -48,6 +55,10 @@ class Answer
     @last_answer = self.user.last_answers.find_or_create_by(:question_id => self.question.id)
     @last_answer.set(:answer_id, self.id)
     #@last_answer.save
+  end
+  
+  def update_exercise_id
+    self.exercise_id = self.question.exercise_id
   end
   
 end
