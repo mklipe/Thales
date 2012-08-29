@@ -1,0 +1,23 @@
+<article class="all_answers">
+<div class="row-fluid" >
+  <div class="span12">
+    <header>
+      <h2>Todas as Respostas Para o Exercício</h2><br />
+      <table class="table table-bordered">
+      	<thead>
+      	  <tr>
+      	  <th>Usuário</th>
+      	  <th>Questão</th>
+      	  <th>Resposta</th>
+      	  <th>Tentativa</th>
+      	  <th>Dica mostrada</th>
+      	  <th>Comentários</th>
+      	  </tr>
+      	</thead>
+      	<tbody id="list_answers">
+      	  
+      	</tbody>
+      </table>
+    </header>
+  </div>
+</article>

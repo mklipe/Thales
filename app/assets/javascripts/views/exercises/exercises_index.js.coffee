@@ -6,7 +6,7 @@ class Thales.Views.ExercisesIndex extends Backbone.View
   events: ->
     'click .pagination-link.previous': 'showIntroduction'
     'click .pagination-link.real': 'showExercise'
-
+      
   showIntroduction: (ev) ->
     ev.preventDefault()
     Backbone.history.navigate('/introductions/page/1', true)

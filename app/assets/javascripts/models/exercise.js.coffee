@@ -12,9 +12,18 @@ class Thales.Models.Exercise extends Backbone.RelationalModel
   }, 
   {
     type: Backbone.HasMany
-    key: 'answers'
+    key: 'recents'
     relatedModel: 'Thales.Models.Answer'
     collectionType: 'Thales.Collections.RecentsCollection'
+    reverseRelation: {
+      key: 'exercise'
+    }
+  }, 
+  {
+    type: Backbone.HasMany
+    key: 'answers'
+    relatedModel: 'Thales.Models.Answer'
+    collectionType: 'Thales.Collections.AnswersCollection'
     reverseRelation: {
       key: 'exercise'
     }

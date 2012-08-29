@@ -1,7 +1,21 @@
 class Thales.Views.ExercisesShow extends Backbone.View
 
   template: JST['exercises/exercise']
+  template2: JST['answers/index']
+  
+  events: ->
+    'click .btn-show': 'showAllAnswers'
 
+  showAllAnswers: (ev) ->
+    @changeTemplate()
+    @model.get('answers').fetch success: =>
+      Backbone.history.navigate('/all_answers/', false)
+      view = new Thales.Views.AnswersIndex(model: @model.get('answers'))
+      $(@el).append(view.render().el)
+      
+  changeTemplate: ->
+     $('#content').html(@template2)
+    
   render: ->
     $(@el).html(@template(exercise: @model))
     @showQuestions()
@@ -15,6 +29,6 @@ class Thales.Views.ExercisesShow extends Backbone.View
       $(@el).append(view.render().el)
 
   showRecentAnswers: () ->
-    @model.get('answers').fetch success: =>
-      view = new Thales.Views.RecentsIndex(model: @model.get('answers'))
+    @model.get('recents').fetch success: =>
+      view = new Thales.Views.RecentsIndex(model: @model.get('recents'))
       $(@el).append(view.render().el)

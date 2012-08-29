@@ -1,5 +1,5 @@
 collection @answers, object_root: false
-attributes :response, :try_number, :correct
+attributes :response, :try_number, :correct, :tip
 
 child :user do
   attributes :email

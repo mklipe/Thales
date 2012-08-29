@@ -16,8 +16,8 @@ class Thales.Views.QuestionsShow extends Backbone.View
     e.preventDefault()
     
     answer = new Thales.Models.Answer()
-    if (e.srcElement.form.answer.value) 
-      console.log('Digite algum valor')
+    #if (e.srcElement.form.answer.value) 
+      #console.log('Digite algum valor')
     answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
