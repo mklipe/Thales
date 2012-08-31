@@ -16,6 +16,7 @@ Thales::Application.routes.draw do
   #match ':scope(*path)', to: 'home#index', :constraints => {scope: 'api'}
   match 'introductions/page/:page' => 'home#index'
   match 'exercises/page/:page' => 'home#index'
+  match '/exercises/:exercise/errors' => 'home#index'
   root to: "home#index"
 
   scope "api" do

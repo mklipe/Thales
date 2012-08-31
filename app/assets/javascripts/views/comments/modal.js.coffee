@@ -1,5 +1,6 @@
 class Thales.Views.ModalView extends Backbone.View 
   template: JST['comments/modal']
+  className: 'comments'
    
   events: ->
     'click .close': 'close'  
@@ -7,7 +8,7 @@ class Thales.Views.ModalView extends Backbone.View
   render: ->
     $(@el).html(@template(answer: @model))
     this
-  
+      
   show: ->
     $(document.body).append(@render().el)               
   

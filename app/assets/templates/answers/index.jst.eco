@@ -1,8 +1,8 @@
 <article class="all_answers">
 <div class="row-fluid" >
-  <div class="span12">
+  <div class="span9">
    
-      <h2>Todas as Respostas Para o Exercício 
+      <h2>Todas as Respostas Para <%= @exercise.get('title')%>
       	<small>
       		<a class="back" href="#">(Voltar para o exercício)</a>
       	</small>
@@ -26,5 +26,8 @@
       	</tbody>
       </table>
   </div>
-  </div>
+
+  <div class="span3" id="comments"> 
+  </div> 	
+</div>
 </article>

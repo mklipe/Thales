@@ -18,19 +18,19 @@ class Thales.Views.QuestionsShow extends Backbone.View
     answer = new Thales.Models.Answer()
     #if (e.srcElement.form.answer.value) 
       #console.log('Digite algum valor')
-    answer.save ({response: e.srcElement.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
+    answer.save ({response: e.target.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
       success: (model, response) ->
         if model.get('correct')
           $(e.delegateTarget).removeClass('error')
           $(e.delegateTarget).addClass('success')
           $("span#" + model.get('question').get('id')).html("<span class='label label-success'>Resposta correta, Parabéns!</span>")
-          $(e.srcElement.form.answer).prop('disabled', true)
-          $(e.srcElement).hide()
+          $(e.target.form.answer).prop('disabled', true)
+          $(e.target).hide()
         else
           $("span#" + model.get('question').get('id')).html("<span class='label label-important'>Resposta errada, Tente novamente!</span><div class='alert alert-error nopadding'>Tentativas: " + model.get('try_number') + "<br />Dica: " + model.get('tip') + "</div>")
           $(e.delegateTarget).removeClass('success')
           $(e.delegateTarget).addClass('error')
-          $(e.srcElement).removeClass('padd')
+          $(e.target).removeClass('padd')
                                     
       error: (obj, resp) ->
         result = $.parseJSON(resp.responseText)

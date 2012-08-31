@@ -1,18 +1,18 @@
 class Thales.Views.ExercisesShow extends Backbone.View
 
   template: JST['exercises/exercise']
-  template2: JST['answers/index']
   
   events: ->
     'click .btn-show': 'showAllAnswers'  
   
   showAllAnswers: (ev) ->
-    @changeTemplate()
-    @model.get('answers').fetch success: =>
-      Backbone.history.navigate('/all_answers/', false)
-      view = new Thales.Views.AnswersIndex(model: @model.get('answers'))
-      $(@el).append(view.render().el)
-      $('table.tablesorter').tablesorter()
+    ev.preventDefault()
+    Backbone.history.navigate('/exercises/' + @model.get('id') + '/errors', true)
+    #@changeTemplate()
+    #@model.get('answers').fetch success: =>
+    #  view = new Thales.Views.AnswersIndex(model: @model.get('answers'))
+    #  $(@el).append(view.render().el)
+    #  $('table.tablesorter').tablesorter()
       
   changeTemplate: ->
      $('#content').html(@template2)

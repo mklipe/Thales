@@ -1,13 +1,9 @@
-<div class="modal">
-  <div class="modal-header"><h3>Comentários</h3></div>
-  <div class="modal-body" id="comments_list">
-  </div>
-  <div class="modal-body" id="new-comment">
+<article>
+	<header>
+		<h3><%= @answer.get('response') %></h3>
+  	</header>
   	<form class="form-horizontal">
-  	<input class="input-xlarge" type="text" placeholder="Comente ..." />
+  	<input class="input-large" type="text" placeholder="Comente ..." />
   	<button class="btn btn-primary">Enviar</button>
   	</form>
-  </div>
-  <div class="modal-footer"><a class="btn close">Fechar</a></div>
-</div>
-<div class="modal-backdrop"></div>
+</article>

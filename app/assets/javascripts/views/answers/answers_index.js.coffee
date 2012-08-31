@@ -1,7 +1,12 @@
 class Thales.Views.AnswersIndex extends Backbone.View
+  template: JST['answers/index']
 
   render: ->
-    @model.each(@appendAnswer)
+    $(@el).html(@template(exercise: @model))
+    @model.get('answers').fetch success: =>
+      @model.get('answers').each(@appendAnswer)
+ 
+      $(@el).find('table').tablesorter()   
     this
 
   appendAnswer: (answer) =>
