@@ -1,9 +1,15 @@
 <article class="all_answers">
 <div class="row-fluid" >
   <div class="span12">
-    <header>
-      <h2>Todas as Respostas Para o Exercício</h2><br />
-      <table class="table table-bordered">
+   
+      <h2>Todas as Respostas Para o Exercício 
+      	<small>
+      		<a class="back" href="#">(Voltar para o exercício)</a>
+      	</small>
+      </h2>
+      
+      <hr />
+      <table class="table tablesorter">
       	<thead>
       	  <tr>
       	  <th>Usuário</th>
@@ -11,6 +17,7 @@
       	  <th>Resposta</th>
       	  <th>Tentativa</th>
       	  <th>Dica mostrada</th>
+      	  <th>Data</th>
       	  <th>Comentários</th>
       	  </tr>
       	</thead>
@@ -18,6 +25,6 @@
       	  
       	</tbody>
       </table>
-    </header>
+  </div>
   </div>
 </article>

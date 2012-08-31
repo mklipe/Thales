@@ -9,6 +9,8 @@ class Answer
   belongs_to :user
   belongs_to :question
   has_one :last_answer
+  embeds_many :comments
+  accepts_nested_attributes_for :comments
   
   field :response
   field :correct, type: Boolean

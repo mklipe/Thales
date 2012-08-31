@@ -30,6 +30,7 @@ group :assets do
   gem 'underscore'
   gem 'twitter-bootstrap-rails'
   gem 'bootswatch-rails'
+  gem 'jquery-tablesorter'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
