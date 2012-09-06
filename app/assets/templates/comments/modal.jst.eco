@@ -1,9 +1,0 @@
-<article>
-	<header>
-		<h3><%= @answer.get('response') %></h3>
-  	</header>
-  	<form class="form-horizontal">
-  	<input class="input-large" type="text" placeholder="Comente ..." />
-  	<button class="btn btn-primary">Enviar</button>
-  	</form>
-</article>

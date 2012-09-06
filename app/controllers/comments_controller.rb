@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+  respond_to :json
+
   def create
     @answer = Answer.find(params[:answer_id])
     @comment = @answer.comments.create!(params[:comment])
     
-    #redirect_to @answer, :notice => "Comment created!"
+    respond_with(@comment)
   end
 end

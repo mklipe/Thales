@@ -4,4 +4,4 @@
 <td><%= @answer.get('try_number') %></td>
 <td><%= @answer.get('tip') %></td>
 <td><%= @answer.get('created_at') %></td>
-<td><a class="show-comments" href="#">Ver</a></td>
+<td><a class="show-comments" href="#">Ver/Comentar</a></td>

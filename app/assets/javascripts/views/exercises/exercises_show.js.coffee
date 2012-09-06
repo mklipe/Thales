@@ -8,15 +8,7 @@ class Thales.Views.ExercisesShow extends Backbone.View
   showAllAnswers: (ev) ->
     ev.preventDefault()
     Backbone.history.navigate('/exercises/' + @model.get('id') + '/errors', true)
-    #@changeTemplate()
-    #@model.get('answers').fetch success: =>
-    #  view = new Thales.Views.AnswersIndex(model: @model.get('answers'))
-    #  $(@el).append(view.render().el)
-    #  $('table.tablesorter').tablesorter()
       
-  changeTemplate: ->
-     $('#content').html(@template2)
-    
   render: ->
     $(@el).html(@template(exercise: @model))
     @showQuestions()

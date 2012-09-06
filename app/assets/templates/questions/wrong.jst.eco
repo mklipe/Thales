@@ -12,7 +12,7 @@
     <span id="<%= @question.get('id') %>" class="help-inline">
     	<span class='label label-important'>Resposta errada, Tente novamente!</span>
 		<div class='alert alert-error nopadding'>
-			Tentativa: <%= try_number %> <br /> 
+			Tentativas: <%= try_number %> <br /> 
 			Dica: <%= tip %>
 		</div>
     </span>

@@ -1,0 +1,4 @@
+<hr />
+<p><%= @comment.get('comment').text %></p>
+
+<p><a href="#" class="remove-comment" id="<%= @comment.get('comment').id %>">Remover Comentário</a></p>

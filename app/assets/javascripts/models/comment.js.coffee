@@ -1,6 +1,7 @@
 class Thales.Models.Comment extends Backbone.RelationalModel
+  
   urlRoot: ->
-    '/api/answers/' + this.get('id') + '/comments'
+    '/api/exercises/' + this.get('answer').get('question').get('exercise_id') + '/answers/' + this.get('answer').get('id') + '/comments'
   
   toJSON: ->
     comment:

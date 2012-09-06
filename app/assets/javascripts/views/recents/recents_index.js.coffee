@@ -10,3 +10,4 @@ class Thales.Views.RecentsIndex extends Backbone.View
     
   appendButton: ->
     $('#answers_list').append("<hr/><div><button class='btn btn-primary btn-show'>Ver Todas</button></div>")
+  
