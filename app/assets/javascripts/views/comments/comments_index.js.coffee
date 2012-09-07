@@ -6,9 +6,9 @@ class Thales.Views.CommentsIndex extends Backbone.View
     'keyup #new_comment_form': 'createComment'
     'click .remove-comment': 'removeComment'
         
-  initialize: ->
-    @collection.on('reset', @render, this)
-    @collection.on('add', @appendComment, this)
+  #initialize: ->
+    #@collection.on('reset', @render, this)
+    #@collection.on('add', @appendComment, this)
       
   render: ->
     $(@el).html(@template)
