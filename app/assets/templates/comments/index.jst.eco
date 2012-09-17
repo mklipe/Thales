@@ -1,5 +1,5 @@
 <form id="new_comment_form" class="form-horizontal">
-  	<input class="input-large" id="new_comment_text" type="text" placeholder="Comente ..." />
+  	<input class="input-large" id="new_comment_text" type="text" placeholder="Escreva um comentário..." />
 </form>
-  	
+<article id='comments_list' class='fixed-scrollable'></article>  	
 

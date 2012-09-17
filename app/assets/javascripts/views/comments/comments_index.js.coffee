@@ -1,41 +1,41 @@
 class Thales.Views.CommentsIndex extends Backbone.View
   template: JST['comments/index']
-   
+  className: 'fixed-scrollable' 
   events: 
     'submit #new_comment_form' : 'createComment'
     'keyup #new_comment_form': 'createComment'
-    'click .remove-comment': 'removeComment'
-        
-  #initialize: ->
-    #@collection.on('reset', @render, this)
-    #@collection.on('add', @appendComment, this)
+    'click .remove-comment': 'removeComment'       
       
   render: ->
     $(@el).html(@template)
-    @collection.each(@appendComment)
+    
+    @model.get('comments').fetch
+      success: => 
+        @model.get('comments').each(@appendComment)
+        @model.get('comments').on('add', @appendComment)
+        
     this
   
   appendComment: (comment) =>
     console.log(comment)
     view = new Thales.Views.CommentsShow(model: comment)
-    @$el.append(view.render().el)
-    
-  appendNew: (comment) =>
-    @$el.append(comment.get('text'))  
-    
+    $(@$el).find('#comments_list').prepend(view.render().el)
+        
   createComment: (e) ->
     e.preventDefault()
     return if e.keyCode != 13
     
     attributes = {
       text: $('#new_comment_text').val()
+      answer: @model
       #user: Thales.currentUser.get('email')
     } 
-    @collection.create attributes,
-      #wait: true
+    
+    @model.get('comments').create attributes,
+      wait: true
       success: -> 
         $('#new_comment_form')[0].reset()
-        alert("Comentário criado com sucesso!")
+        
       error: @handleError
       
   removeComment: (event) ->

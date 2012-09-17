@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
   respond_to :json
 
+  def index
+    @answer = Answer.find(params[:answer_id])
+    respond_with(@answer.comments)
+  end
+
   def create
     @answer = Answer.find(params[:answer_id])
     @comment = @answer.comments.create!(params[:comment])
     
     respond_with(@comment)
   end
+
 end

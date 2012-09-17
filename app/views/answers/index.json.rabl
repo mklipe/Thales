@@ -9,10 +9,6 @@ child :user do
   attributes :email
 end
 
-child :comments do
-  attributes :text, :id	
-end
-
 child :question do
   attributes :title
 end

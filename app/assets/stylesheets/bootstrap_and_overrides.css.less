@@ -4,12 +4,17 @@ body { padding-top: 60px; }
 section.login_form { align: center; padding-top: 30px; padding-left: 50px; margin-left: 300px; margin-right: 300px; display: block }
 article { margin-bottom: 80px; }
 .bar {height: 40px; background-color: white; border-width: 15px; border-style: solid; border-color: white; margin-bottom: 0px; /* para browsers sem suporte a CSS 3 */}
-
+.selected-row {background-color: #B0C4DE;}
 .nopadding {margin-bottom: 0px;}
 .padd {margin-top: 15px;}
 .fixed {position: fixed; height:73%;}
+.fixed-scrollable {position: fixed; height:78%; width:23%; overflow: auto;}
 @media (max-width: 979px){
   .fixed{
+    position:static;
+    width:auto;
+  }
+  .fixed-scrollable{
     position:static;
     width:auto;
   }
