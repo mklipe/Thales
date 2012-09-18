@@ -21,6 +21,7 @@ gem 'rails_admin'
 gem 'thin'
 gem 'rabl'
 gem 'yajl-ruby'
+gem 'private_pub'
 
 # Gems used only for assets and not required
 # in production environments by default.
