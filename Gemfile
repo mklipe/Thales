@@ -20,7 +20,8 @@ gem 'thin'
 gem 'rabl'
 gem 'yajl-ruby'
 gem 'private_pub'
-
+gem "ckeditor", "3.7.1"
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,8 +32,7 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'bootswatch-rails'
   gem 'jquery-tablesorter'
-  gem "ckeditor", "3.7.1"
-  gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
