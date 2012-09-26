@@ -2,11 +2,12 @@
 <div class="row-fluid" >
   <div class="span9">
    
-      <h2>Todas as Respostas Para <%= @exercise.get('title')%>
-      	<small>
-      		<a class="back" href="#">(Voltar para o exercício)</a>
-      	</small>
-      </h2>
+      <h2>Todas as Respostas Para <%= @exercise.get('title')%></h2>
+      	
+      		<button class="back btn btn-info pull-right">
+      		<i class="icon-arrow-left icon-large bigger"></i> Voltar para o exercício</button>
+      	
+      
       
       <hr />
       <table class="table tablesorter">

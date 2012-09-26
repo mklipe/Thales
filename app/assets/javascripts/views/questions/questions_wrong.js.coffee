@@ -16,8 +16,10 @@ class Thales.Views.QuestionsWrong extends Backbone.View
     e.preventDefault()
     
     answer = new Thales.Models.Answer()
+    
     #if (e.srcElement.form.answer.value == "") 
       #alert('Digite algum valor')
+      
     answer.save ({response: e.target.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
       success: (model, response) ->
         if model.get('correct')

@@ -1,10 +1,10 @@
 class Thales.Views.CommentsIndex extends Backbone.View
   template: JST['comments/index']
   className: 'fixed-scrollable' 
+  
   events: 
     'submit #new_comment_form' : 'createComment'
-    'keyup #new_comment_form': 'createComment'
-    'click .remove-comment': 'removeComment'       
+    'keyup #new_comment_form': 'createComment'      
       
   render: ->
     $(@el).html(@template)
@@ -28,7 +28,7 @@ class Thales.Views.CommentsIndex extends Backbone.View
     attributes = {
       text: $('#new_comment_text').val()
       answer: @model
-      #user: Thales.currentUser.get('email')
+      user: Thales.currentUser
     } 
     
     @model.get('comments').create attributes,
@@ -37,12 +37,7 @@ class Thales.Views.CommentsIndex extends Backbone.View
         $('#new_comment_form')[0].reset()
         
       error: @handleError
-      
-  removeComment: (event) ->
-    event.preventDefault()
-    console.dir(event.target.id)
-    @collection.get(event.target.id).destroy()
-    @collection.trigger('reset')
+    this
        
   handleError: (comment, response) ->
     if response.status == 422

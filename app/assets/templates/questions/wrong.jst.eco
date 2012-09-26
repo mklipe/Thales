@@ -7,7 +7,7 @@
   	<% resp = @question.get('last_answer').response  %>
   	<% try_number = @question.get('last_answer').try_number %>
   	<% tip =  @question.get('last_answer').tip %>
-    <input name="answer" type="text" placeholder="Digite sua resposta." value="<%= resp %>" />
+    <input name="answer" type="text" placeholder="Digite sua resposta." value=<%= resp %> />
    
     <span id="<%= @question.get('id') %>" class="help-inline">
     	<span class='label label-important'>Resposta errada, Tente novamente!</span>

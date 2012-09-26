@@ -1,22 +1,27 @@
 <section class="well login_form">
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h2>Editar Dados de Usuário</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email=> "E-mail" %><br />
+  
+  <div><%= f.label "Nome completo"%>
+  <%= f.text_field :name %></div>
+  
+  <div><%= f.label "E-mail" %>
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :password => "Senha" %> <i>(deixe em branco se você não quer alterar)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation => "Confirmação da Senha"%><br />
+  <div><%= f.label "Senha" %> 
+  <%= f.password_field :password, :autocomplete => "off" %>
+  <i>(deixe em branco se você não quer alterar)</i><br /></div>
+  <div><%= f.label "Confirmação da Senha"%>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password => "Senha atual"%> <i>(precisamos de sua senha atual para confirmar suas mudanças)</i><br />
-  <%= f.password_field :current_password %></div>
+  <div><%= f.label "Senha atual"%> 
+  <%= f.password_field :current_password %>
+  <i>(precisamos da senha atual para confirmar as mudanças)</i>
+  </div>
 
-  <div><%= f.submit "Atualizar", :class => "btn btn-primary" %></div>
+  <div><br /><%= f.submit "Atualizar", :class => "btn btn-primary" %></div>
 <% end %>
 	
 <h3>Cancelar minha conta</h3>

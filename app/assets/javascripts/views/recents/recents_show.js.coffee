@@ -3,7 +3,6 @@ class Thales.Views.RecentsShow extends Backbone.View
       
   render: ->
     $(@el).html(@template(answer: @model))
-    #console.log(@model)
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, @el]);
     this
     

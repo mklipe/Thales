@@ -1,6 +1,6 @@
-<td><%= @answer.get('user').email %></td>
+<td><%= @answer.get('user').name %></td>
 <td><%= @answer.get('question').get('title') %></td>
-<td><%= @answer.get('response') %></td>
+<td>$<%= @answer.get('response') %>$</td>
 <td><%= @answer.get('try_number') %></td>
 <td><%= @answer.get('tip') %></td>
 <td><%= @answer.get('created_at') %></td>

@@ -2,7 +2,7 @@ collection @answers, object_root: false
 attributes :response, :try_number, :correct
 
 child :user do
-  attributes :email
+  attributes :name
 end
 
 child :question do

@@ -12,4 +12,13 @@ class LastAnswersController < ApplicationController
     end
   end
   
+  def destroy
+    @last_answer = LastAnswer.find(params[:id])
+    @last_answer.destroy
+        
+    respond_to do |format|
+      format.json { render json: @last_answer }
+    end
+  end
+  
 end

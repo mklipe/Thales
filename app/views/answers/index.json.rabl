@@ -6,7 +6,7 @@ node :created_at do |answer|
 end
 
 child :user do
-  attributes :email
+  attributes :name, :email
 end
 
 child :question do

@@ -18,7 +18,12 @@ class AnswersController < ApplicationController
       #Answer.new(params[:answer])
       respond_with(@answer)
     else 
-      respond_with(Answer.create(params[:answer]))
+      @answer = Answer.create(params[:answer])
+      puts "-------------"
+      p params[:exercise_id]
+      PrivatePub.publish_to("/exercises/#{params[:exercise_id]}" , answer: @answer)
+      
+      respond_with(@answer)
     end
   end
   

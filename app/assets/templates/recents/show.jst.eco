@@ -1,4 +1,4 @@
 <hr />
-<b><%= @answer.get('user').email %></b>
-<p>Respondeu (<%= @answer.get('question').get('title') %>): <%= @answer.get('response') %></p>
+<b><i class="icon-user icon-large bigger"></i> <%= @answer.get('user').name %></b> respondeu a <%= @answer.get('question').get('title') %>
+<br /><i>Resposta: $<%= @answer.get('response') %>$</i>
 

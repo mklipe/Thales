@@ -1,5 +1,7 @@
 Thales::Application.routes.draw do
 
+  resources :messages
+
   resources :comments
 
   resources :tips
@@ -24,11 +26,11 @@ Thales::Application.routes.draw do
     resources :user
     resources :answers
     resources :exercises do
+      resources :last_answers
       resources :answers do
         resources :comments
       end
       resources :questions do
-        resources :last_answers
         resources :answers do 
           resources :comments
         end

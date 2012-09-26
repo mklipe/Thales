@@ -27,6 +27,15 @@ class Thales.Models.Exercise extends Backbone.RelationalModel
     reverseRelation: {
       key: 'exercise'
     }
+  }, 
+  {
+    type: Backbone.HasMany
+    key: 'last_answers'
+    relatedModel: 'Thales.Models.LastAnswer'
+    collectionType: 'Thales.Collections.LastAnswersCollection'
+    reverseRelation: {
+      key: 'exercise'
+    }
   }]
 
   defaults:

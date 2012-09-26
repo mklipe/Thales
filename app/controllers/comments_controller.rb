@@ -12,5 +12,12 @@ class CommentsController < ApplicationController
     
     respond_with(@comment)
   end
+  
+  def destroy 
+    @answer = Answer.find(params[:answer_id])
+    @comment = @answer.comments.find(params[:id])
+    @comment.destroy
+    respond_with(@comment)
+  end
 
 end

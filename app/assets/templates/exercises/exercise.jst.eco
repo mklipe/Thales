@@ -2,11 +2,15 @@
   <div class="row-fluid">
     <div class="span9">
       <header>
-        <h2><%= @exercise.get('title') %></h2>
+      	<button class="btn btn-danger pull-right btn-restart">
+      	<i class="icon-remove-circle icon-large bigger"></i>  Recomeçar exercício
+      	</button>
+        <h2><%= @exercise.get('title') %>
+        </h2>
       </header>
     
       <%- (@exercise.get('content'))%> 
-    
+      
       <section class="questions" id="questions_list">
       </section>
     </div>
