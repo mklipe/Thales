@@ -5,7 +5,7 @@ class User
   has_many :answers
   has_many :tips_counts
   has_many :last_answers
-  has_many :comments
+  #has_many :comments
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

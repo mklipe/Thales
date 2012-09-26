@@ -11,13 +11,15 @@ class Thales.Views.CommentsIndex extends Backbone.View
     
     @model.get('comments').fetch
       success: => 
+        if @model.get('comments').length > 0
+          $(@$el).find('#inform').remove()
         @model.get('comments').each(@appendComment)
         @model.get('comments').on('add', @appendComment)
         
     this
   
   appendComment: (comment) =>
-    console.log(comment)
+    $(@$el).find('#inform').remove()
     view = new Thales.Views.CommentsShow(model: comment)
     $(@$el).find('#comments_list').prepend(view.render().el)
         
@@ -29,6 +31,8 @@ class Thales.Views.CommentsIndex extends Backbone.View
       text: $('#new_comment_text').val()
       answer: @model
       user: Thales.currentUser
+      user_name: Thales.currentUser.get('name')
+      user_email: Thales.currentUser.get('email')
     } 
     
     @model.get('comments').create attributes,

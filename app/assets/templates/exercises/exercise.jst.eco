@@ -16,7 +16,7 @@
     </div>
     <section class="answers span3">
       <div class="well fixed" id="answers_list">
-        <h4>Últimas respostas para este exercício</h4>
+        <h4 id="text">Últimas respostas para este exercício</h4>
       </div>
     </section>	 
   </div>

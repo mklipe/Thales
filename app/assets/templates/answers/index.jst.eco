@@ -2,13 +2,9 @@
 <div class="row-fluid" >
   <div class="span9">
    
-      <h2>Todas as Respostas Para <%= @exercise.get('title')%></h2>
-      	
+      <h2>Todas as respostas para o <%= @exercise.get('title')%></h2>
       		<button class="back btn btn-info pull-right">
       		<i class="icon-arrow-left icon-large bigger"></i> Voltar para o exercício</button>
-      	
-      
-      
       <hr />
       <table class="table tablesorter">
       	<thead>
@@ -29,6 +25,13 @@
   </div>
 
   <div class="span3" id="comments"> 
+  	<div class="inform"><br />
+  		<p class="bigger "><i class="icon-info-sign"></i> Para ordenar os itens da tabela, clique nos cabeçalhos das colunas.</p>
+  		<br />
+  		<p class="bigger"><i class="icon-info-sign"></i> Para visualizar os comentários ou comentar as respostas clique no link "Ver/Comentar" 
+  		da resposta.
+  		</p>
+  	</div>
   </div> 	
 </div>
 </article>

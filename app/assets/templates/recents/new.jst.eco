@@ -1,0 +1,4 @@
+<hr />
+<b><i class="icon-user icon-large bigger"></i> <%= @answer.user.name %></b> respondeu a <%= @answer.question.title %>
+<br /><i>Resposta: $<%= @answer.response %>$</i>
+

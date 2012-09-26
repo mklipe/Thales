@@ -19,10 +19,10 @@ class AnswersController < ApplicationController
       respond_with(@answer)
     else 
       @answer = Answer.create(params[:answer])
-      puts "-------------"
-      p params[:exercise_id]
-      PrivatePub.publish_to("/exercises/#{params[:exercise_id]}" , answer: @answer)
-      
+      if !@answer.correct
+        PrivatePub.publish_to("/exercises/#{params[:exercise_id]}" , answer: @answer.as_json(:include => [ :question, :user ]))
+        #only question.title and user.name
+      end
       respond_with(@answer)
     end
   end

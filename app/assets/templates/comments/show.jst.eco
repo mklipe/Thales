@@ -1,3 +1,6 @@
-<p><%= @comment.get('text') %></p>
-<p><a href="#" class="remove-comment" id="<%= @comment.get('id') %>">Remover Comentário</a></p>
+<b><i class="icon-user icon-large bigger"></i> <%= @comment.get('user_name') %></b> 
+<p><i><%= @comment.get('text') %></i>
+<% if @comment.get('user_email') == Thales.currentUser.get('email'): %>
+  <a href="#" class="remove-comment pull-right" id="<%= @comment.get('id') %>">Remover Comentário</a></p>
+<% end %>
 <hr />

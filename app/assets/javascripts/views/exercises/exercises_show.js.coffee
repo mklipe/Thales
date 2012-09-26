@@ -11,9 +11,12 @@ class Thales.Views.ExercisesShow extends Backbone.View
     PrivatePub.sign(@model.get('private_pub'))
     PrivatePub.subscribe "/exercises/"+@model.id, (answer, channel) ->
       console.log(answer)
+      if $(".recent").get([4])
+        $(".recent").last().remove()
+      view = new Thales.Views.RecentsNew(model: answer.answer)
+      $("h4#text").after(view.render().el)
       
-    console.log("/exercises/"+@model.id);
-  
+   
   showAllAnswers: (ev) ->
     ev.preventDefault()
     Backbone.history.navigate('/exercises/' + @model.get('id') + '/errors', true)
@@ -37,9 +40,19 @@ class Thales.Views.ExercisesShow extends Backbone.View
       $(@el).append(view.render().el)
       
   restartExercise: () ->
-    if confirm "Deseja mesmo recomeçar este exercício?"
-      @model.get('questions').each(@deleteLastAnswer)
-      @render()
+    textConfirm = "<h1><i class='icon-warning-sign icon-large bigger pull-right'></i></h1> 
+      <p class='bigger'>Deseja mesmo recomeçar este exercício?</p>"
+           
+    bootbox.confirm textConfirm, "Não", "Sim", (result) =>
+      if result
+        
+        textAlert = "<h1><i class='icon-ok-sign icon-large bigger pull-right'></i></h1>
+          <p class='bigger'>Exercício reiniciado! 
+          <br />Suas respostas erradas permanecerão guardadas!</p>" 
+          
+        @model.get('questions').each(@deleteLastAnswer)
+        @render()
+        bootbox.alert(textAlert)
 
   deleteLastAnswer: (question) => 
     if question.get('last_answer')
@@ -48,7 +61,7 @@ class Thales.Views.ExercisesShow extends Backbone.View
         wait: true 
         success: ->
           question.unset('last_answer')
-          console.log("destruido")
+          #console.log("destruido")
         error: ->
-          console.log("Errooou")
+          console.log("Error: ExercisesShow")
     

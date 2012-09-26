@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require private_pub
 //= require twitter/bootstrap
+//= require bootbox
 //= require jquery-tablesorter
 //= require ckeditor/init
 //= require underscore
