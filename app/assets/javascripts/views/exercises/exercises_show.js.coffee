@@ -7,11 +7,11 @@ class Thales.Views.ExercisesShow extends Backbone.View
     'click .btn-restart' : 'restartExercise'
   
   initialize: ->
-    console.log(@model.get('private_pub'), 'oi')
+    #console.log(@model.get('private_pub'), 'oi')
     #PrivatePub.sign({"server":"http://localhost:9292/faye","timestamp":1348239802966,"channel":"/messages/new","signature":"fa62aabef717a7dd5c5a92caf6fa4b3d7b8a674a"})
     PrivatePub.sign(@model.get('private_pub'))
     PrivatePub.subscribe "/exercises/"+@model.id, (answer, channel) ->
-      console.log(answer)
+      #console.log(answer)
       if $(".recent").get([4])
         $(".recent").last().remove()
       view = new Thales.Views.RecentsNew(model: answer.answer)
@@ -65,4 +65,3 @@ class Thales.Views.ExercisesShow extends Backbone.View
           #console.log("destruido")
         error: ->
           console.log("Error: ExercisesShow")
-    

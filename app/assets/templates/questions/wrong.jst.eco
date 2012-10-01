@@ -1,9 +1,7 @@
 <hr />
-<h2><%= @question.get('title') %></h2>
-<p class="bigger"><%= @question.get('content') %></p>
-
 <form class="well form-horizontal" id="<%= @question.get('title') %>">
-  
+  	<h3><%= @question.get('title') %>:
+	<%= @question.get('content') %></h3>
   	<% resp = @question.get('last_answer').response  %>
   	<% try_number = @question.get('last_answer').try_number %>
   	<% tip =  @question.get('last_answer').tip %>

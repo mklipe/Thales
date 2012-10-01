@@ -1,8 +1,7 @@
 <form id="new_comment_form" class="form-horizontal">
   	<input class="input-large" id="new_comment_text" type="text" placeholder="Escreva um comentário..." />
-  	<hr />
 </form>
-<article id='comments_list' class='fixed-scrollable'>
+<div id='comments_list' class='fixed-scrol welll'>
 	<div id="inform"><br />
   		<p class="bigger ">
   			<i class="icon-info-sign"></i> 
@@ -10,5 +9,5 @@
   			Seja o primeiro a comentar!
   		</p>
   	</div>
-</article>  	
+</div>  	
 

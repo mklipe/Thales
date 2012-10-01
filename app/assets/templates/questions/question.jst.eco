@@ -1,9 +1,9 @@
 <hr />
-<h2><%= @question.get('title') %></h2>
-<p class="bigger"><%= @question.get('content') %></p>
+
 
 <form class="well form-horizontal" id="<%= @question.get('title') %>">
-  
+    <h3><%= @question.get('title') %>:
+	<%= @question.get('content') %></h3>
     <input name="answer" type="text" placeholder="Digite sua resposta." />
     <span id="<%= @question.get('id') %>" class="help-inline"></span>
  

@@ -1,7 +1,6 @@
 class Thales.Views.CommentsIndex extends Backbone.View
   template: JST['comments/index']
-  className: 'fixed-scrollable' 
-  
+   
   events: 
     'submit #new_comment_form' : 'createComment'
     'keyup #new_comment_form': 'createComment'      

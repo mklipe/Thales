@@ -24,7 +24,7 @@
       </table>
   </div>
 
-  <div class="span3" id="comments"> 
+  <div class="span3 well" id="comments"> 
   	<div class="inform"><br />
   		<p class="bigger "><i class="icon-info-sign"></i> Para ordenar os itens da tabela, clique nos cabeçalhos das colunas.</p>
   		<br />
