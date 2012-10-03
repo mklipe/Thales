@@ -1,13 +1,13 @@
 <article class="exercise" id="<%= @exercise.get('title') %>">
   <div class="row-fluid">
     <div class="span9">
-      <header>
+     
       	<button class="btn btn-danger pull-right btn-restart">
       	<i class="icon-remove-circle icon-white icon-large bigger"></i>  Recomeçar exercício
       	</button>
         <h2><%= @exercise.get('title') %>
         </h2>
-      </header>
+      
     
       <%- (@exercise.get('content'))%> 
       
