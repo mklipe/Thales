@@ -20,7 +20,8 @@ class Thales.Views.QuestionsWrong extends Backbone.View
     if (e.target.form.answer.value == "") 
       bootbox.alert("<p class='bigger'><i class='icon-exclamation-sign'></i> Digite algum valor!</p>")
     else  
-      answer.save ({response: e.target.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
+      user_answer = e.target.form.answer.value.replace(",", ".")
+      answer.save ({response: user_answer, question: @model, user_id: Thales.currentUser.get('id')}),
         success: (model, response) ->
           if model.get('correct')
             $(e.delegateTarget).removeClass('error')
