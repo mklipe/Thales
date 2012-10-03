@@ -17,8 +17,8 @@ class Thales.Views.QuestionsShow extends Backbone.View
     
     answer = new Thales.Models.Answer()
     
-    if (e.srcElement.form.answer.value == "") 
-      bootbox.alert('Digite algum valor!')
+    if (e.target.form.answer.value == "") 
+      bootbox.alert("<p class='bigger'><i class='icon-exclamation-sign icon-large'></i> Digite algum valor!</p>")
     else
       answer.save ({response: e.target.form.answer.value, question: @model, user_id: Thales.currentUser.get('id')}),
         success: (model, response) ->

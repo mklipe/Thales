@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Exercise.find(params[:exercise_id]).questions
+    @questions = Exercise.find(params[:exercise_id]).questions.asc(:title)
 
     #respond with rabl index
   end

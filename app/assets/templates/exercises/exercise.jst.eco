@@ -3,7 +3,7 @@
     <div class="span9">
       <header>
       	<button class="btn btn-danger pull-right btn-restart">
-      	<i class="icon-remove-circle icon-large bigger"></i>  Recomeçar exercício
+      	<i class="icon-remove-circle icon-white icon-large bigger"></i>  Recomeçar exercício
       	</button>
         <h2><%= @exercise.get('title') %>
         </h2>
