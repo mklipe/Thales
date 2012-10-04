@@ -1,0 +1,20 @@
+<div id="content">
+	<% if user_signed_in? %>
+	 	<p><i class="icon-cogwheels icon-large"></i> Seja bem vindo <%= current_user.name %>! </p>
+	<% else %>
+	<div class="hero-unit ">
+		
+  		<%= image_tag("logo_blue.png", :height => "80%", :width => "80%" , :alt => "Logotipo da aplicação Thales") %>
+  		<p></p>
+  		<p class="lead">
+  			Thales é um Objeto de Aprendizagem Matemático voltado ao ensino/aprendizado dos conceitos de Segmentos Proporcionais e Teorema de Thales.
+  		    O aprendiz tem acesso a conteúdos explicativos e exercícios sobre estes temas.  
+  	    </p>
+  		<!--
+    		<a class="btn btn-inverse btn-large pull-right" href="/users/sign_up">
+      		Iniciar
+    		</a>
+  		-->
+  	<% end %>	
+	</div>
+</div>

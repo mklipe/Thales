@@ -20,7 +20,7 @@ Thales::Application.routes.draw do
   match 'exercises/page/:page' => 'home#index'
   match '/exercises/:exercise/errors' => 'home#index'
   root to: "home#index"
-
+  
   scope "api" do
     resources :users
     resources :user
