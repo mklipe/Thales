@@ -2,12 +2,7 @@
   	<input class="input-large" id="new_comment_text" type="text" placeholder="Escreva um comentário..." />
 </form>
 <div id='comments_list' class='fixed-scrol welll'>
-	<div id="inform"><br />
-  		<p class="bigger ">
-  			<i class="icon-info-sign"></i> 
-  			Não há nenhum comentário para esta resposta.
-  			Seja o primeiro a comentar!
-  		</p>
+	<div id="inform">
   	</div>
 </div>  	
 

@@ -12,6 +12,11 @@ class Thales.Views.CommentsIndex extends Backbone.View
       success: => 
         if @model.get('comments').length > 0
           $(@$el).find('#inform').remove()
+        else 
+          $(@$el).find('#inform').html("<br /><p class='bigger'><i class='icon-info-sign'></i> 
+            Não há nenhum comentário para esta resposta.
+            Seja o primeiro a comentar!
+            </p>")
         @model.get('comments').each(@appendComment)
         @model.get('comments').on('add', @appendComment)
         
