@@ -32,5 +32,4 @@ class Thales.Views.Paginator extends Backbone.View
       $("ul", @el).append "<li><a id='exercises' rel='tooltip' title='Exercícios' 
         data-page='exercícios' class='pagination-link next' 
         href= '/exercises/page/1' > Exercícios </a></li>"            
-    
     this

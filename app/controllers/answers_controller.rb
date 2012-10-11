@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   respond_to :json
  
   def index
-    @answers = Answer.wrong(params[:exercise_id])
+    @answers = Answer.wrong(params[:exercise_id]).paginate(:page => params[:page], :per_page => 10)
   end
   
   def recents

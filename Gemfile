@@ -22,6 +22,8 @@ gem 'yajl-ruby'
 gem 'private_pub'
 gem "ckeditor", "3.7.1"
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'will_paginate'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

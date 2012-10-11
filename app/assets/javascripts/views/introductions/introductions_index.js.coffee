@@ -21,7 +21,13 @@ class Thales.Views.IntroductionsIndex extends Backbone.View
     
   showExercise: (ev) ->
     ev.preventDefault()
-    Backbone.history.navigate('/exercises/page/1', true)
+    textConfirm = "<h1><i class='icon-warning-sign icon-large bigger pull-right'></i></h1> 
+      <p class='bigger'>Ler a introdução é essencial para resolver os exercícios.</p>
+      <p class='bigger'>Você já leu e deseja ir para os exercícios?</p>"
+        
+    bootbox.confirm textConfirm, "Não", "Sim", (result) =>
+      if result
+        Backbone.history.navigate('/exercises/page/1', true)
   
     
   render: ->

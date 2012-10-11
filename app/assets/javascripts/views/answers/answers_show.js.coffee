@@ -6,7 +6,6 @@ class Thales.Views.AnswersShow extends Backbone.View
     'click .show-comments': 'showComments'
     
   showComments: (ev) ->
-    #console.log(@model)
     ev.preventDefault()
     view = new Thales.Views.CommentsIndex(model: @model)
     $("#comments").html(view.render().el)
