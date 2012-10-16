@@ -19,7 +19,9 @@
 //= require ckeditor/init
 //= require underscore
 //= require backbone
+//= require backbone.paginator
 //= require backbone-relational
+//= require backbone.pagedcollection
 //= require thales
 //= require_tree ../templates
 //= require_tree ./models
