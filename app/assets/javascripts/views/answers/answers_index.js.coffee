@@ -3,8 +3,12 @@ class Thales.Views.AnswersIndex extends Backbone.View
   
   events: 
     'click .back': 'goBack'
-    'click .scroll': 'checkScroll'
-    #"scroll": 'checkScroll'
+    'click .just-mine': 'showJustMine'
+    'click .search': 'search'
+    'submit #search_form' : 'search'
+    'keyup #search_form': 'search'
+    'reset': 'rerender'
+  
   
   initialize: ->
     _.bindAll(this, 'checkScroll');
@@ -13,8 +17,16 @@ class Thales.Views.AnswersIndex extends Backbone.View
   render: ->
     $(@el).html(@template(exercise: @model))
     @collection = @model.get('answers')
+    @collection.search = ""
     @collection.fetch success: =>
-      console.log(@collection)
+      @collection.each(@appendAnswer)
+      $(@el).find('table').tablesorter()   
+    this
+
+  rerender: ->
+    $(@el).html(@template(exercise: @model))
+    $('#new_search').val(@collection.search).focus()
+    @collection.fetch success: =>
       @collection.each(@appendAnswer)
       $(@el).find('table').tablesorter()   
     this
@@ -26,11 +38,23 @@ class Thales.Views.AnswersIndex extends Backbone.View
   goBack: (e) ->
     e.preventDefault()
     window.history.back()
-
+    
+  showJustMine: (e) ->
+    e.preventDefault()
+    @collection.reset()
+    @collection.search = Thales.currentUser.get('name')
+    @rerender()
+    
+  search: (e) ->
+    e.preventDefault()
+    @collection.reset()
+    @collection.search = $('#new_search').delay(800).val()
+    @rerender()
+   
   next: ->
     @collection.nextPage()
     @collection.fetch success: =>
-      console.log(@collection)
+      #console.log(@collection)
       @collection.each(@appendAnswer)
       $(@el).find('table').tablesorter()
 

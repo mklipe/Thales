@@ -1,10 +1,10 @@
 class Thales.Collections.AnswersCollection extends Backbone.Collection 
-  
+  @search = ""
   url: ->
-    '/api/exercises/'+ this.exercise.get('id') + '/answers?' + $.param(page: @page)
+    '/api/exercises/'+ this.exercise.get('id') + '/answers?' + $.param(page: @page, search: @search)
   
   model: Thales.Models.Answer
-
+  
   initialize: ->
     @page = 1
 
@@ -15,5 +15,11 @@ class Thales.Collections.AnswersCollection extends Backbone.Collection
   previousPage: ->
     @page = @page - 1
     @fetch()
+    
+  showJustMine: ->
+    @search = Thales.currentUser.get('name')
+    @fetch()
+    
+    
   
   

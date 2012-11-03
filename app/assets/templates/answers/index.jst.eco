@@ -2,7 +2,13 @@
 <div class="row-fluid" >
   <div class="span9">
    
-      <h2>Todas as respostas para o <%= @exercise.get('title')%></h2>
+      <h2>Respostas para o <%= @exercise.get('title')%></h2>
+      <form class="well form-horizontal" id="search_form">
+      	<input class="input-large" id="new_search" type="text" placeholder="Digite o nome do aluno..."  />
+      	<button class="btn btn-primary search">Pesquisar por aluno</button> 
+      	
+      </form>
+      		<button class="btn btn-link just-mine">Mostrar apenas as minhas respostas</button>
       		<button class="back btn btn-info pull-right">
       		<i class="icon-arrow-left icon-white icon-large bigger"></i> Voltar para o exercício</button>
       <hr />

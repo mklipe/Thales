@@ -2,11 +2,11 @@ class User
   include Mongoid::Document
   
   has_many :authentications
-  has_many :answers
+  has_many :answers, :inverse_of => :user
   has_many :tips_counts
   has_many :last_answers
   #has_many :comments
-  
+  attr_accessible :all
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and 

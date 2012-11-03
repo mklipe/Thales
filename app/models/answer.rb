@@ -5,16 +5,17 @@ class Answer
   include Mongoid::Document
   include Mongoid::Timestamps
   include MathEvaluate
-  
   belongs_to :user
   belongs_to :question
   has_one :last_answer
+ 
   embeds_many :comments
   accepts_nested_attributes_for :comments
-  
+    
   field :response
   field :correct, type: Boolean
   field :tip
+  field :user_name
   field :try_number, type: Integer
   field :exercise_id
   
@@ -22,16 +23,30 @@ class Answer
   after_save :register_last_answer
   before_save :update_exercise_id
   
-  scope :wrong, lambda { |exer_id| where(correct: false, "exercise_id" => exer_id) }
-  
   default_scope order_by([:created_at, :desc])
 
+  scope :wrong, lambda { |exer_id| 
+    where(correct: false, "exercise_id" => exer_id) 
+  }
+
+  scope :by_user, lambda { |user|
+    where(:user_id => user.id)
+  }
   
+  scope :by_user_name, lambda {|searchterm|
+    any_of(:user_name => /.*#{searchterm}.*/)
+  }
+  
+  scope :by_question, lambda { |question|
+    where(:question_id => question.id)
+  }
+    
   def verify_response
     question = Question.find(self.question_id) 
     self.correct = MathEvaluate::Expression.eql?(question.correct_answer, self.response)
     if !self.correct
       get_tip
+      self.user_name = self.user.name
     else
       @tips_count = self.question.tips_counts.find_or_create_by(:user_id => self.user.id)
       self.try_number = @tips_count.tries
@@ -62,5 +77,5 @@ class Answer
   def update_exercise_id
     self.exercise_id = self.question.exercise_id
   end
-  
+    
 end

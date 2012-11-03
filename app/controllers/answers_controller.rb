@@ -3,7 +3,11 @@ class AnswersController < ApplicationController
   respond_to :json
  
   def index
-    @answers = Answer.wrong(params[:exercise_id]).paginate(:page => params[:page], :per_page => 12)
+    @answers = Answer.wrong(params[:exercise_id]).by_user_name(params[:search]).paginate(:page => params[:page], :per_page => 12)
+  end
+  
+  def just_mine
+    @answers = Answer.wrong(params[:exercise_id]).by_user(current_user).paginate(:page => params[:page], :per_page => 12)
   end
   
   def recents
