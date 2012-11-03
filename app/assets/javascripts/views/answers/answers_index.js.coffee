@@ -27,8 +27,14 @@ class Thales.Views.AnswersIndex extends Backbone.View
     $(@el).html(@template(exercise: @model))
     $('#new_search').val(@collection.search).focus()
     @collection.fetch success: =>
-      @collection.each(@appendAnswer)
-      $(@el).find('table').tablesorter()   
+      if @collection.length > 0
+        @collection.each(@appendAnswer)
+        $(@el).find('table').tablesorter() 
+      else 
+        $(@el).find('table').before("<div class='alert'> <button type='button'
+          class='close' data-dismiss='alert'>×</button><strong>Aviso!</strong> Nenhum resultado para sua pesquisa </div>")
+        $(@el).find('table').remove()
+         
     this
 
   appendAnswer: (answer) =>
@@ -43,12 +49,14 @@ class Thales.Views.AnswersIndex extends Backbone.View
     e.preventDefault()
     @collection.reset()
     @collection.search = Thales.currentUser.get('name')
+    @collection.page = 1
     @rerender()
     
   search: (e) ->
     e.preventDefault()
     @collection.reset()
     @collection.search = $('#new_search').delay(800).val()
+    @collection.page = 1
     @rerender()
    
   next: ->
@@ -59,7 +67,7 @@ class Thales.Views.AnswersIndex extends Backbone.View
       $(@el).find('table').tablesorter()
 
   nearBottomOfPage: () ->
-    return (@scroolDistanceFromBottom() < 150)
+    return (@scroolDistanceFromBottom() < 100)
     
   scroolDistanceFromBottom: (argument) ->
     return @pageHeight() - (window.pageYOffset + self.innerHeight)

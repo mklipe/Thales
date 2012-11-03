@@ -12,6 +12,7 @@
       		<button class="back btn btn-info pull-right">
       		<i class="icon-arrow-left icon-white icon-large bigger"></i> Voltar para o exercício</button>
       <hr />
+      
       <table class="table tablesorter">
       	<thead>
       	  <tr>

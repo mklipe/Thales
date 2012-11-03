@@ -26,6 +26,7 @@ class Thales.Views.CommentsIndex extends Backbone.View
     $(@$el).find('#inform').remove()
     view = new Thales.Views.CommentsShow(model: comment)
     $(@$el).find('#comments_list').prepend(view.render().el)
+    $('#new_comment_text').focus()
         
   createComment: (e) ->
     e.preventDefault()
