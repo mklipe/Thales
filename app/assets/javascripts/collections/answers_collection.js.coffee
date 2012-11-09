@@ -16,9 +16,7 @@ class Thales.Collections.AnswersCollection extends Backbone.Collection
     @page = @page - 1
     @fetch()
     
-  showJustMine: ->
-    @search = Thales.currentUser.get('name')
-    @fetch()
+  
     
     
   
