@@ -24,16 +24,22 @@ class Thales.Views.AnswersIndex extends Backbone.View
     this
 
   rerender: ->
-    $(@el).html(@template(exercise: @model))
-    $('#new_search').val(@collection.search).focus()
-    @collection.fetch success: =>
-      if @collection.length > 0
-        @collection.each(@appendAnswer)
-        $(@el).find('table').tablesorter() 
-      else 
-        $(@el).find('table').before("<div class='alert'> <button type='button'
+    $(@el).find('#list_answers').html('')
+    $(@el).find('.alert').remove()
+    #$('#new_search').val(@collection.search).focus()
+    @collection.fetch
+      wait: true
+      success: =>
+        if @collection.length > 0
+          $(@el).find('table').show()
+          @collection.each(@appendAnswer)
+          $(@el).find('table').tablesorter() 
+        else 
+          $(@el).find('table').before("<div class='alert'> <button type='button'
           class='close' data-dismiss='alert'>×</button><strong>Aviso!</strong> Nenhum resultado para sua pesquisa </div>")
-        $(@el).find('table').remove()
+          $(@el).find('table').hide()
+     
+        
          
     this
 

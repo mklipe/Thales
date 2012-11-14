@@ -7,7 +7,6 @@ class Thales.Views.CommentsIndex extends Backbone.View
       
   render: ->
     $(@el).html(@template)
-    
     @model.get('comments').fetch
       success: => 
         if @model.get('comments').length > 0
@@ -39,15 +38,15 @@ class Thales.Views.CommentsIndex extends Backbone.View
       user_name: Thales.currentUser.get('name')
       user_email: Thales.currentUser.get('email')
     } 
-    
+   
     @model.get('comments').create attributes,
       wait: true
       success: -> 
-        $('#new_comment_form')[0].reset()
-        
+        $('#new_comment_form').find('input').attr('value', '')    
       error: @handleError
     this
        
+    
   handleError: (comment, response) ->
     if response.status == 422
       errors = $.parseJSON(response.responseText).errors

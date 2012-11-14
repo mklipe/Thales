@@ -12,9 +12,9 @@ class Thales.Collections.AnswersCollection extends Backbone.Collection
     @page = @page + 1
     @fetch()
 
-  previousPage: ->
-    @page = @page - 1
-    @fetch()
+  #previousPage: ->
+  #  @page = @page - 1
+  #  @fetch()
     
   
     
